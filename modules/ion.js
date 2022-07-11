@@ -4,7 +4,7 @@ export default class Ion {
         this.symbol = symbol;
         this.charge = charge;
         this.chargeMagnitude = Math.abs(parseInt(charge));
-        this.htmlId = '#' + htmlId;
+        this.htmlId = htmlId;
     }
     getName() {
         return this.name
@@ -21,10 +21,10 @@ export default class Ion {
     displayIon() {
         let ionDiv = document.createElement('div');
         ionDiv.append(this.symbol);
-        let chargeDisplay = document.createElement('sub');
+        let chargeDisplay = document.createElement('sup');
         chargeDisplay.textContent = this.charge;
         ionDiv.append(chargeDisplay);
-        let ion = document.querySelector(this.html);
-        ion.append(ionDiv);
+        let ionContainer = document.querySelector(this.htmlId);
+        ionContainer.append(ionDiv);
     }
 }

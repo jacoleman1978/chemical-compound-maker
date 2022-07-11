@@ -13,7 +13,7 @@ const anions = [
 ];
 
 const mgAnions = anions.map((anion) => {
-    let ion = new Ion(anion[0], anion[1], anion[2], 'mg-anion')
+    let ion = new Ion(anion[0], anion[1], anion[2], '#mg-anion')
     
     return ion
 });

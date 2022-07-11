@@ -10,7 +10,7 @@ const cations = [
 ];
 
 const mgCations = cations.map((cation) => {
-    let ion = new Ion(cation[0], cation[1], cation[2], 'mg-cation')
+    let ion = new Ion(cation[0], cation[1], cation[2], '#mg-cation')
     
     return ion
 });
