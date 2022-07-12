@@ -18,6 +18,10 @@ export default class Ion {
         return this.charge
     }
 
+    getChargeMagnitude() {
+        return this.chargeMagnitude
+    }
+
     displayIon() {
         let ionDiv = document.createElement('div');
         ionDiv.append(this.symbol);

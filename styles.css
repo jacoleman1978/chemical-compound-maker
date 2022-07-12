@@ -5,6 +5,7 @@ h1 {
 }
 .compound {
     display: flex;
+    justify-content: space-around;
 }
 
 #select-ions {
