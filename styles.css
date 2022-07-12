@@ -1,0 +1,35 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+}
+.compound {
+    display: flex;
+}
+
+#select-ions {
+    display: flex;
+    justify-content: space-around;
+}
+
+#select-cation {
+    display: flex;
+}
+
+#select-anion {
+    display: flex;
+}
+
+#mg-ions-btn {
+    height: 1.25rem;
+}
+
+#mg-cation {
+    display: flex;
+    justify-content: center;
+}
+
+#mg-anion {
+    display: flex;
+    justify-content: center;
+}
