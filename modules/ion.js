@@ -21,13 +21,12 @@ export default class Ion {
         return this.chargeMagnitude
     }
 
-    displayIon(htmlId) {
+    getFormattedIon(htmlId) {
         let ionDiv = document.createElement('div');
         ionDiv.append(this.symbol);
         let chargeDisplay = document.createElement('sup');
         chargeDisplay.textContent = this.charge;
         ionDiv.append(chargeDisplay);
-        let ionContainer = document.querySelector(htmlId);
-        ionContainer.append(ionDiv);
+        return ionDiv
     }
 }

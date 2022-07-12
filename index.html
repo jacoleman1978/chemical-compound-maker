@@ -10,62 +10,62 @@
 </head>
 <body>
     <h2>Options</h2>
-    <section id="options">
+    <form id="options">
         <div id="display-method" class="outline">
             Display Method:
             <div class="options">
-                <input id="random" name="display-method" value="random" type="radio" checked/>
+                <input id="random" name="display-method" value="random" type="radio"/>
                 <label for="random">Random</label>
             </div>
             <div class="options">
-                <input id="manual" name="display-method" value="manual" type="radio"/>
+                <input id="manual" name="display-method" value="manual" type="radio" checked/>
                 <label for="manual">Manual</label>
             </div>
         </div>
         <div id="included-types" class="outline">
             Included Types:
             <div class="options">
-                <input type="checkbox" id="main-group-ions" name="main-group-ions" value="main-group-ions" checked/>
+                <input class="types" type="checkbox" id="main-group-ions" name="main-group-ions" value="main-group-ions" checked/>
                 <label for="main-group-ions">Main Group Ions</label>
             </div>
             <div class="options">
-                <input type="checkbox" id="transition-metal-ions" name="transition-metal-ions" value="transition-metal-ions" checked/>
+                <input class="types" type="checkbox" id="transition-metal-ions" name="transition-metal-ions" value="transition-metal-ions"/>
                 <label for="transition-metal-ions">Transition Metal Ions</label>
             </div>
             <div class="options">
-                <input type="checkbox" id="polyatomic-ions" name="polyatomic-ions" value="polyatomic-ions"/>
+                <input class="types" type="checkbox" id="polyatomic-ions" name="polyatomic-ions" value="polyatomic-ions"/>
                 <label for="polyatomic-ions">Polyatomic Ions</label>
             </div>
             <div class="options">
-                <input type="checkbox" id="acids" name="acids" value="acids"/>
+                <input class="types" type="checkbox" id="acids" name="acids" value="acids"/>
                 <label for="acids">Acids</label>
             </div>
             <div class="options">
-                <input type="checkbox" id="molecular" name="molecular" value="molecular"/>
+                <input class="types" type="checkbox" id="molecular" name="molecular" value="molecular"/>
                 <label for="molecular">Molecular</label>
             </div>
         </div>
-    </section>
+    </form>
     <section id="name-ion">
         <h2>Name the Ion</h2>
-        <
+        
     </section>
     <section id="mg-bi-ionic">
         <h2>Main Group - Binary Ionic Compounds</h2>
         <div id="select-ions">
             <div >
-                <select name="cation-selector" id="cation-selector"></select>
-                <div id="mg-cation"></div>
+                <select name="cation-dropdown" id="cation-dropdown"></select>
+                <div id="cation-display"></div>
             </div>
             <div >
-                <select name="anion-selector" id="anion-selector"></select>
-                <div id="mg-anion"></div>
+                <select name="anion-dropdown" id="anion-dropdown"></select>
+                <div id="anion-display"></div>
             </div>
-            <button id="mg-ions-btn">Display Formula</button>
+            <button id="display-formula-btn">Display Formula</button>
         </div>
         <div class="compound">
-            <div id="name"></div>
-            <div id="formula"></div>
+            <div id="display-name"></div>
+            <div id="display-formula"></div>
         </div>
     </section>
 

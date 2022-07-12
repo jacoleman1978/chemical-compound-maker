@@ -31,24 +31,24 @@ h2 {
     justify-content: space-around;
 }
 
-#select-cation {
+#cation-dropdown {
     display: flex;
 }
 
-#select-anion {
+#anion-dropdown {
     display: flex;
 }
 
-#mg-ions-btn {
+#display-formula-btn {
     height: 1.25rem;
 }
 
-#mg-cation {
+#cation-display {
     display: flex;
     justify-content: center;
 }
 
-#mg-anion {
+#anion-display {
     display: flex;
     justify-content: center;
 }

@@ -12,7 +12,7 @@ const mgCations = [
     ['aluminum', 'Al', '+3']
 ];
 
-const mgCationsOptions = mgCations.map((cation, i) => {
+const mgCationsOptions = mgCations.map((cation) => {
     let ion = new Ion(cation[0], cation[1], cation[2])
     
     return ion

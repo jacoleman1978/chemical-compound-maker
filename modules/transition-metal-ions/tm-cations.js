@@ -23,7 +23,7 @@ const tsCations = [
     ['osmium(VIII)', 'Os', '+8'],
 ];
 
-const tsCationsOptions = tsCations.map((cation, i) => {
+const tsCationsOptions = tsCations.map((cation) => {
     let ion = new Ion(cation[0], cation[1], cation[2])
     
     return ion
