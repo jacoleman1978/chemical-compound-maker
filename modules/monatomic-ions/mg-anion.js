@@ -1,6 +1,6 @@
-import Ion from "../modules/ion.js";
+import Ion from "../ion.js";
 
-const anions = [
+const mgAnions = [
     ['fluoride', 'F', '-1', 1],
     ['chloride', 'Cl', '-1', 1],
     ['bromide', 'Br', '-1', 1],
@@ -21,8 +21,8 @@ option.setAttribute("disabled", true);
 option.setAttribute("hidden", true);
 anionSelector.append(option);
 
-const mgAnions = anions.map((anion, i) => {
-    let ion = new Ion(anion[0], anion[1], anion[2], '#mg-anion')
+const mgAnionsOptions = mgAnions.map((anion, i) => {
+    let ion = new Ion(anion[0], anion[1], anion[2])
 
     let option = document.createElement('option');
     option.value = i;
@@ -32,12 +32,10 @@ const mgAnions = anions.map((anion, i) => {
     return ion
 });
 
-
-
 anionSelector.addEventListener("change", () => {
     let anionDisplay = document.querySelector('#mg-anion');
     anionDisplay.innerHTML = "";
-    mgAnions[anionSelector.value].displayIon();
+    mgAnionsOptions[anionSelector.value].displayIon('#mg-anion');
 });
 
-export default mgAnions
+export default mgAnionsOptions
