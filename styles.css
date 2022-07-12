@@ -1,8 +1,26 @@
-h1 {
+h2 {
     display: flex;
     justify-content: center;
     text-decoration: underline;
 }
+
+#options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.options {
+    margin-left: 0.75rem;
+}
+
+.outline {
+    padding: 0.5rem;
+    border: solid gray 1px;
+    width: 11rem;
+}
+
 .compound {
     display: flex;
     justify-content: space-around;
