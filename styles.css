@@ -29,8 +29,9 @@ h2 {
 
 #select-ions {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
+    gap: 1rem;
 }
 
 #cation-dropdown {
@@ -88,4 +89,10 @@ button {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
+}
+
+.flex-around-start {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
 }

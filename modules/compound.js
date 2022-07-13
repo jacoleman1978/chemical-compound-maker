@@ -75,4 +75,22 @@ export default class Compound {
         let name = document.querySelector(htmlId);
         name.append(this.getName());
     }
+
+    getPlainFormula() {
+        this.findSubscripts();
+
+        let plainFormula = this.catSymbol;
+
+        if (this.cationSubscript > 1) {
+            plainFormula += `/${this.cationSubscript}`;
+        }
+
+        plainFormula += this.anSymbol;
+
+        if (this.anionSubscript > 1) {
+            plainFormula += `/${this.anionSubscript}`;
+        }
+
+        return plainFormula
+    }
 }

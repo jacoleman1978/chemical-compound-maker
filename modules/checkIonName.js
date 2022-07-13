@@ -9,8 +9,10 @@ const checkIonName = () => {
 
     if (userAnswer == answer) {
         domSelectors.nameIonAnswer.style.backgroundColor = 'lightgreen';
+        domSelectors.displayNameIonAnswer.style.color = 'green';
     } else {
         domSelectors.nameIonAnswer.style.backgroundColor = 'yellow';
+        domSelectors.displayNameIonAnswer.style.color = 'red';
     }
 }
 

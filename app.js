@@ -3,12 +3,12 @@ import getCationList from "./modules/getCationList.js";
 import getAnionList from "./modules/getAnionList.js";
 import makeCompound from "./modules/makeCompound.js";
 import data from "./modules/data.js";
-import checkCompoundName from "./modules/checkCompoundName.js";
 import randomIon from "./modules/randomIon.js";
 import checkIonName from "./modules/checkIonName.js";
 import resetNameIon from "./modules/resetNameIon.js";
 import checkIonFormula from "./modules/checkIonFormula.js";
 import resetFormulaIon from "./modules/resetFormulaIon.js";
+import checkCompoundFormula from "./modules/checkCompoundFormula.js";
 
 const main = () => {
     data.nameTheIon = randomIon('both');
@@ -22,8 +22,6 @@ const main = () => {
 
         domSelectors.displayFormula.innerHTML = "";
 
-        domSelectors.displayName.innerHTML = "";
-
         domSelectors.cationDisplay.innerHTML = "";
 
         let formattedIon = data.cationNames[e.target.value].getFormattedIon();
@@ -34,8 +32,6 @@ const main = () => {
         domSelectors.anionDisplay.innerHTML = "";
 
         domSelectors.displayFormula.innerHTML = "";
-
-        domSelectors.displayName.innerHTML = "";
         
         domSelectors.anionDisplay.innerHTML = "";
 
@@ -46,11 +42,10 @@ const main = () => {
     domSelectors.displayFormulaBtn.addEventListener('click', (e) => {
         e.preventDefault();
         domSelectors.displayFormula.innerHTML = "";
-        domSelectors.displayName.innerHTML = "";
 
         makeCompound('name');
 
-        checkCompoundName();
+        checkCompoundFormula();
     })
     
     const types = document.querySelectorAll('.types')

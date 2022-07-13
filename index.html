@@ -86,22 +86,26 @@
             </div>
         </div>
     </form>
-    <form id="mg-bi-ionic" class="practice-forms">
-        <h2>Main Group - Binary Ionic Compounds</h2>
-        <div id="select-ions">
-            <div >
-                <select name="cation-dropdown" id="cation-dropdown"></select>
-                <div id="cation-display"></div>
+    <form id="compound-formula-playground" class="practice-forms">
+        <h2>Compound Formula Playground</h2>
+        <div class="flex-around-start">
+            <div id="select-ions">
+                <div>
+                    <select name="cation-dropdown" id="cation-dropdown"></select>
+                    <div id="cation-display"></div>
+                </div>
+                <div >
+                    <select name="anion-dropdown" id="anion-dropdown"></select>
+                    <div id="anion-display"></div>
+                </div>
             </div>
-            <div >
-                <select name="anion-dropdown" id="anion-dropdown"></select>
-                <div id="anion-display"></div>
+            <div id="formula-answer-box">
+                <input type="text" id="formula-answer" placeholder="Formula of the Compound" autocomplete="off"/>
+                <div id="display-formula"></div>
             </div>
-            <div id="name-answer-box">
-                <input type="text" id="name-answer" placeholder="Name the Compound" autocomplete="off"/>
-                <div id="display-name"></div>
+            <div class="check-answer">
+                <button id="display-formula-btn">Check Answer</button>
             </div>
-            <button id="display-formula-btn">Display Formula</button>
         </div>
         <div class="compound">
             

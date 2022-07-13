@@ -9,7 +9,8 @@ const data = {
     anionSymbols: getAnionList('symbol', false),
     compoundName: '',
     nameTheIon: '',
-    ionFormula: ''
+    ionFormula: '',
+    playgroundCompound: ""
 }
 
 export default data;

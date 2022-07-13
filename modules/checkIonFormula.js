@@ -9,8 +9,10 @@ const checkIonFormula = () => {
 
     if (userAnswer == answer) {
         domSelectors.formulaIonAnswer.style.backgroundColor = 'lightgreen';
+        domSelectors.displayFormulaIonAnswer.style.color = 'green';
     } else {
         domSelectors.formulaIonAnswer.style.backgroundColor = 'yellow';
+        domSelectors.displayFormulaIonAnswer.style.color = 'red';
     }
 }
 

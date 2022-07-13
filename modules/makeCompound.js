@@ -7,17 +7,13 @@ const makeCompound = (displayType) => {
         if (typeof data.cationNames[domSelectors.cationDropdown.value] !== 'undefined' && typeof data.anionNames[domSelectors.anionDropdown.value] !== 'undefined') {
             const cation = data.cationNames[domSelectors.cationDropdown.value];
             const anion = data.anionNames[domSelectors.anionDropdown.value];
-            data.compoundName = new Compound(cation, anion);
-            data.compoundName.displayFormula("#display-formula");
-            data.compoundName.displayName("#display-name");
+            data.playgroundCompound = new Compound(cation, anion);
         }
     } else if (displayType === 'symbol') {
         if (typeof data.cationSymbols[domSelectors.cationDropdown.value] !== 'undefined' && typeof data.anionSymbols[domSelectors.anionDropdown.value] !== 'undefined') {
             const cation = data.cationSymbols[domSelectors.cationDropdown.value];
             const anion = data.anionSymbols[domSelectors.anionDropdown.value];
-            data.compoundName = new Compound(cation, anion);
-            data.compoundName.displayFormula("#display-formula");
-            data.compoundName.displayName("#display-name");
+            data.playgroundCompound = new Compound(cation, anion);
         }
     }
 }
