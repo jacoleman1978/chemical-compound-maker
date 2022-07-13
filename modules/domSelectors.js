@@ -4,6 +4,7 @@ const domSelectors = {
     cationDropdown: document.querySelector('#cation-dropdown'),
     anionDropdown: document.querySelector('#anion-dropdown'),
     cationDisplay: document.querySelector('#cation-display'),
+    nameAnswer: document.querySelector('#name-answer'),
     anionDisplay: document.querySelector('#anion-display'),
     displayFormulaBtn: document.querySelector('#display-formula-btn'),
     displayFormula: document.querySelector('#display-formula'),

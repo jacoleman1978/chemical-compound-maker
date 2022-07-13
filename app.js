@@ -1,8 +1,9 @@
-import domSelectors from "./modules/dom-selectors.js";
-import cationOptions from "./modules/cation-options.js";
-import anionOptions from "./modules/anion-options.js";
-import makeCompound from "./modules/make-compound.js";
+import domSelectors from "./modules/domSelectors.js";
+import getCationList from "./modules/getCationList.js";
+import getAnionList from "./modules/getAnionList.js";
+import makeCompound from "./modules/makeCompound.js";
 import data from "./modules/data.js";
+import checkCompoundName from "./modules/checkCompoundName.js";
 
 const main = () => {
 
@@ -15,7 +16,7 @@ const main = () => {
 
         domSelectors.cationDisplay.innerHTML = "";
 
-        let formattedIon = data.availableCations[e.target.value].getFormattedIon();
+        let formattedIon = data.cationNames[e.target.value].getFormattedIon();
         domSelectors.cationDisplay.append(formattedIon);
     })
 
@@ -28,17 +29,21 @@ const main = () => {
         
         domSelectors.anionDisplay.innerHTML = "";
 
-        let formattedIon = data.availableAnions[e.target.value].getFormattedIon();
+        let formattedIon = data.anionNames[e.target.value].getFormattedIon();
         domSelectors.anionDisplay.append(formattedIon);
     });
 
     domSelectors.displayFormulaBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        domSelectors.displayFormula.innerHTML = "";
+        domSelectors.displayName.innerHTML = "";
 
-        makeCompound();
+        makeCompound('name');
+
+        checkCompoundName();
     })
     
-    makeCompound();
+    makeCompound('name');
 
     const types = document.querySelectorAll('.types')
     for (let type of types) {
@@ -51,12 +56,10 @@ const main = () => {
 
             domSelectors.displayName.innerHTML = "";
 
-            data.availableCations = cationOptions();
-            data.availableAnions = anionOptions();
+            data.cationNames = getCationList('name');
+            data.anionNames = getAnionList('name');
         })
     }
-
-
 }
 
 main();

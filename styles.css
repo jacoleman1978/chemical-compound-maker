@@ -28,6 +28,7 @@ h2 {
 
 #select-ions {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 

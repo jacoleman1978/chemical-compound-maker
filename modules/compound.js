@@ -54,8 +54,6 @@ export default class Compound {
         this.findSubscripts();
 
         let formula = document.querySelector(htmlId);
-        formula.innerHTML = "Formula: ";
-
         formula.append(this.catSymbol);
         
         if (this.cationSubscript > 1) {
@@ -75,7 +73,6 @@ export default class Compound {
 
     displayName(htmlId) {
         let name = document.querySelector(htmlId);
-        name.innerHTML = "Name: ";
         name.append(this.getName());
     }
 }

@@ -1,9 +1,12 @@
-import anionOptions from "./anion-options.js";
-import cationOptions from "./cation-options.js";
+import getAnionList from "./getAnionList.js";
+import getCationList from "./getCationList.js";
 
 const data = {
-    availableCations: cationOptions(),
-    availableAnions: anionOptions()
+    cationNames: getCationList('name'),
+    anionNames: getAnionList('name'),
+    cationSymbols: [],
+    anionSymbols: [],
+    compoundName: ''
 }
 
 export default data;
