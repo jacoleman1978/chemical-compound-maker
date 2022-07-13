@@ -4,8 +4,11 @@ import getAnionList from "./modules/getAnionList.js";
 import makeCompound from "./modules/makeCompound.js";
 import data from "./modules/data.js";
 import checkCompoundName from "./modules/checkCompoundName.js";
+import randomIon from "./modules/randomIon.js";
+import checkIonName from "./modules/checkIonName.js";
 
 const main = () => {
+    makeCompound('name');
 
     domSelectors.cationDropdown.addEventListener("change", (e) => {
         domSelectors.cationDisplay.innerHTML = "";
@@ -43,8 +46,6 @@ const main = () => {
         checkCompoundName();
     })
     
-    makeCompound('name');
-
     const types = document.querySelectorAll('.types')
     for (let type of types) {
         type.addEventListener('click', () => {
@@ -56,10 +57,36 @@ const main = () => {
 
             domSelectors.displayName.innerHTML = "";
 
-            data.cationNames = getCationList('name');
-            data.anionNames = getAnionList('name');
+            data.cationNames = getCationList('name', true);
+            data.anionNames = getAnionList('name', true);
         })
     }
+
+    const ionSymbolRadios = document.querySelectorAll('.ion-symbol-option');
+    for (let radioBtn of ionSymbolRadios) {
+        if (radioBtn.checked == true) {
+            data.ionType = radioBtn.value;
+            data.nameTheIon = randomIon();
+            domSelectors.ionSymbol.append(data.nameTheIon.getFormattedIon());
+        }
+    }
+    for (let radioBtn of ionSymbolRadios) {
+        radioBtn.addEventListener('click', () => {
+            if (radioBtn.checked == true) {
+                data.ionType = radioBtn.value;
+                domSelectors.ionSymbol.innerHTML = "";
+                data.nameTheIon = randomIon();
+                domSelectors.ionSymbol.append(data.nameTheIon.getFormattedIon());
+            }
+        })
+    }
+
+    domSelectors.checkIonNameBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        domSelectors.nameIonAnswer.innerHTML = "";
+
+        checkIonName();
+    })
 }
 
 main();

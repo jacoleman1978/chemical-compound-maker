@@ -8,7 +8,13 @@ const domSelectors = {
     anionDisplay: document.querySelector('#anion-display'),
     displayFormulaBtn: document.querySelector('#display-formula-btn'),
     displayFormula: document.querySelector('#display-formula'),
-    displayName: document.querySelector('#display-name')
+    displayName: document.querySelector('#display-name'),
+    ionSymbol: document.querySelector('#ion-symbol'),
+    cationSymbolOption: document.querySelector('#cation-symbol-option'),
+    anionSymbolOption: document.querySelector('#anion-symbol-option'),
+    bothSymbolOption: document.querySelector('#both-symbol-option'),
+    nameIonAnswer: document.querySelector('#name-ion-answer'),
+    checkIonNameBtn: document.querySelector('#check-ion-name')
 }
 
 export default domSelectors;

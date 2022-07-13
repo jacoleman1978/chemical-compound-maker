@@ -46,12 +46,28 @@
             </div>
         </div>
     </form>
-    <section id="name-ion-section">
-        <h2>Name the Ion</h2>
-        <div id="name-the-ion">
-
+    <form id="name-ion-section">
+        <div id="ion-options">
+            <h2 class="no-margins">Name the Ion</h2>
+            <div class="options">
+                <input id="cation-symbol-option" name="ion-symbol-option" value="cation" type="radio" class="ion-symbol-option"/>
+                <label for="cation-symbol-option">Cation</label>
+            </div>
+            <div class="options">
+                <input id="anion-symbol-option" name="ion-symbol-option" value="anion" type="radio" class="ion-symbol-option"/>
+                <label for="anion-symbol-option">Anion</label>
+            </div>
+            <div class="options">
+                <input id="both-symbol-option" name="ion-symbol-option" value="both" type="radio" class="ion-symbol-option" checked/>
+                <label for="both-symbol-option">Both</label>
+            </div>
         </div>
-    </section>
+        <div id="name-the-ion">
+            <div id="ion-symbol"></div>
+            <input type="text" id="name-ion-answer" placeholder="Name the Ion" autocomplete="off"/>
+            <button id="check-ion-name">Check Answer</button>
+        </div>
+    </form>
     <form id="mg-bi-ionic">
         <h2>Main Group - Binary Ionic Compounds</h2>
         <div id="select-ions">

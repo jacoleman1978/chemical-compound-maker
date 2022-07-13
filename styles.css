@@ -53,3 +53,16 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
+#ion-options {
+    display: flex;
+}
+
+.no-margins {
+    margin: 0px;
+}
+
+#name-the-ion {
+    display: flex;
+    gap: 1rem;
+}
