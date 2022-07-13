@@ -11,19 +11,8 @@
 <body>
     <h2>Options</h2>
     <form id="options">
-        <div id="display-method" class="outline">
-            Display Method:
-            <div class="options">
-                <input id="random" name="display-method" value="random" type="radio"/>
-                <label for="random">Random</label>
-            </div>
-            <div class="options">
-                <input id="manual" name="display-method" value="manual" type="radio" checked/>
-                <label for="manual">Manual</label>
-            </div>
-        </div>
         <div id="included-types" class="outline">
-            Included Types:
+            Included Ion Types:
             <div class="options">
                 <input class="types" type="checkbox" id="main-group-ions" name="main-group-ions" value="main-group-ions" checked/>
                 <label for="main-group-ions">Main Group Ions</label>
@@ -35,6 +24,14 @@
             <div class="options">
                 <input class="types" type="checkbox" id="polyatomic-ions" name="polyatomic-ions" value="polyatomic-ions"/>
                 <label for="polyatomic-ions">Polyatomic Ions</label>
+            </div>
+
+        </div>
+        <div class="outline">
+            Included Compound Types:
+            <div class="options">
+                <input class="types" type="checkbox" id="ionic" name="ionic" value="ionic" checked/>
+                <label for="ionic">Ionic</label>
             </div>
             <div class="options">
                 <input class="types" type="checkbox" id="acids" name="acids" value="acids"/>

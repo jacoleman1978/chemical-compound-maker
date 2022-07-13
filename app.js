@@ -9,6 +9,7 @@ import resetNameIon from "./modules/resetNameIon.js";
 import checkIonFormula from "./modules/checkIonFormula.js";
 import resetFormulaIon from "./modules/resetFormulaIon.js";
 import checkCompoundFormula from "./modules/checkCompoundFormula.js";
+import resetCompoundPlayground from "./modules/resetCompoundPlayground.js";
 
 const main = () => {
     data.nameTheIon = randomIon('both');
@@ -20,9 +21,7 @@ const main = () => {
     domSelectors.cationDropdown.addEventListener("change", (e) => {
         domSelectors.cationDisplay.innerHTML = "";
 
-        domSelectors.displayFormula.innerHTML = "";
-
-        domSelectors.cationDisplay.innerHTML = "";
+        resetCompoundPlayground();
 
         let formattedIon = data.cationNames[e.target.value].getFormattedIon();
         domSelectors.cationDisplay.append(formattedIon);
@@ -31,9 +30,7 @@ const main = () => {
     domSelectors.anionDropdown.addEventListener("change", (e) => {
         domSelectors.anionDisplay.innerHTML = "";
 
-        domSelectors.displayFormula.innerHTML = "";
-        
-        domSelectors.anionDisplay.innerHTML = "";
+        resetCompoundPlayground();
 
         let formattedIon = data.anionNames[e.target.value].getFormattedIon();
         domSelectors.anionDisplay.append(formattedIon);

@@ -1,9 +1,10 @@
 export default class Ion {
-    constructor(name, symbol, charge) {
+    constructor(name, symbol, charge, isPolyatomic) {
         this.name = name;
         this.symbol = symbol;
         this.charge = charge;
         this.chargeMagnitude = Math.abs(parseInt(charge));
+        this.isPolyatomic = isPolyatomic;
     }
     getName() {
         return this.name

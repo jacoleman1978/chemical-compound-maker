@@ -2,6 +2,8 @@ h2 {
     display: flex;
     justify-content: center;
     text-decoration: underline;
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
 }
 
 #options {
@@ -19,7 +21,7 @@ h2 {
 .outline {
     padding: 0.5rem;
     border: solid gray 1px;
-    width: 11rem;
+    width: 12rem;
 }
 
 .compound {
@@ -31,7 +33,7 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    gap: 1rem;
+    gap: 0.25rem;
 }
 
 #cation-dropdown {
@@ -58,14 +60,17 @@ h2 {
 
 .ion-options {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
 }
 
 .ion-display {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 .button-group {
@@ -93,6 +98,9 @@ button {
 
 .flex-around-start {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
 }

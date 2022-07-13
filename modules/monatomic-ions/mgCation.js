@@ -1,19 +1,19 @@
 import Ion from "../ion.js";
 
 const mgCations = [
-    ['lithium', 'Li', '+1'],
-    ['sodium', 'Na', '+1'],
-    ['potassium', 'K', '+1'],
-    ['silver', 'Ag', '+1'],
-    ['magnesium', 'Mg', '+2'],
-    ['calcium', 'Ca', '+2'],
-    ['cadmium', 'Cd', '+2'],
-    ['zinc', 'Zn', '+2'],
-    ['aluminum', 'Al', '+3']
+    ['lithium', 'Li', '+1', false],
+    ['sodium', 'Na', '+1', false],
+    ['potassium', 'K', '+1', false],
+    ['silver', 'Ag', '+1', false],
+    ['magnesium', 'Mg', '+2', false],
+    ['calcium', 'Ca', '+2', false],
+    ['cadmium', 'Cd', '+2', false],
+    ['zinc', 'Zn', '+2', false],
+    ['aluminum', 'Al', '+3', false]
 ];
 
 const mgCationsOptions = mgCations.map((cation) => {
-    let ion = new Ion(cation[0], cation[1], cation[2])
+    let ion = new Ion(cation[0], cation[1], cation[2], cation[3]);
     
     return ion
 });
