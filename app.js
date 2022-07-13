@@ -59,6 +59,9 @@ const main = () => {
 
             data.cationNames = getCationList('name', true);
             data.anionNames = getAnionList('name', true);
+            data.cationSymbols = getCationList('symbol', false);
+            data.anionSymbols = getAnionList('symbol', false);
+            data.nameTheIon = randomIon();
         })
     }
 
