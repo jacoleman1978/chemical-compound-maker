@@ -29,4 +29,8 @@ export default class Ion {
         ionDiv.append(chargeDisplay);
         return ionDiv
     }
+
+    getPlainFormula() {
+        return `${this.symbol}^${this.charge}`
+    }
 }

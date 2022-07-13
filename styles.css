@@ -55,13 +55,13 @@ h2 {
     justify-content: center;
 }
 
-#ion-options {
+.ion-options {
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
 
-#name-the-ion {
+.ion-display {
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -81,4 +81,11 @@ button {
 .check-answer {
     display: flex;
     align-items: flex-start;
+}
+
+.practice-forms {
+    border: solid black 1px;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
 }

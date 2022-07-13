@@ -8,7 +8,8 @@ const data = {
     cationSymbols: getCationList('symbol', false),
     anionSymbols: getAnionList('symbol', false),
     compoundName: '',
-    nameTheIon: ''
+    nameTheIon: '',
+    ionFormula: ''
 }
 
 export default data;

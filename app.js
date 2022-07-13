@@ -7,10 +7,15 @@ import checkCompoundName from "./modules/checkCompoundName.js";
 import randomIon from "./modules/randomIon.js";
 import checkIonName from "./modules/checkIonName.js";
 import resetNameIon from "./modules/resetNameIon.js";
+import checkIonFormula from "./modules/checkIonFormula.js";
+import resetFormulaIon from "./modules/resetFormulaIon.js";
 
 const main = () => {
     data.nameTheIon = randomIon('both');
     domSelectors.ionSymbol.append(data.nameTheIon.getFormattedIon());
+
+    data.ionFormula = randomIon('both');
+    domSelectors.ionName.append(data.ionFormula.getName());
 
     domSelectors.cationDropdown.addEventListener("change", (e) => {
         domSelectors.cationDisplay.innerHTML = "";
@@ -85,6 +90,27 @@ const main = () => {
         e.preventDefault();
         domSelectors.nameIonAnswer.innerHTML = "";
         checkIonName();
+    })
+
+    domSelectors.newCationName.addEventListener('click', (e) => {
+        e.preventDefault();
+        resetFormulaIon('cation');
+    })
+
+    domSelectors.newAnionName.addEventListener('click', (e) => {
+        e.preventDefault();
+        resetFormulaIon('anion');
+    })
+
+    domSelectors.newRandomIonName.addEventListener('click', (e) => {
+        e.preventDefault();
+        resetFormulaIon('both');
+    })
+
+    domSelectors.checkIonFormulaBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        domSelectors.nameIonAnswer.innerHTML = "";
+        checkIonFormula();
     })
 }
 
