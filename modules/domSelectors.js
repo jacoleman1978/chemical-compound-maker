@@ -9,12 +9,13 @@ const domSelectors = {
     displayFormulaBtn: document.querySelector('#display-formula-btn'),
     displayFormula: document.querySelector('#display-formula'),
     displayName: document.querySelector('#display-name'),
+    newCationSymbol: document.querySelector('#new-cation'),
+    newAnionSymbol: document.querySelector('#new-anion'),
+    newRandomIonSymbol: document.querySelector('#new-random-ion'),
     ionSymbol: document.querySelector('#ion-symbol'),
-    cationSymbolOption: document.querySelector('#cation-symbol-option'),
-    anionSymbolOption: document.querySelector('#anion-symbol-option'),
-    bothSymbolOption: document.querySelector('#both-symbol-option'),
     nameIonAnswer: document.querySelector('#name-ion-answer'),
-    checkIonNameBtn: document.querySelector('#check-ion-name')
+    checkIonNameBtn: document.querySelector('#check-ion-name'),
+    displayNameIonAnswer: document.querySelector('#display-name-ion-answer')
 }
 
 export default domSelectors;

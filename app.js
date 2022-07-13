@@ -6,9 +6,11 @@ import data from "./modules/data.js";
 import checkCompoundName from "./modules/checkCompoundName.js";
 import randomIon from "./modules/randomIon.js";
 import checkIonName from "./modules/checkIonName.js";
+import resetNameIon from "./modules/resetNameIon.js";
 
 const main = () => {
-    makeCompound('name');
+    data.nameTheIon = randomIon('both');
+    domSelectors.ionSymbol.append(data.nameTheIon.getFormattedIon());
 
     domSelectors.cationDropdown.addEventListener("change", (e) => {
         domSelectors.cationDisplay.innerHTML = "";
@@ -61,33 +63,27 @@ const main = () => {
             data.anionNames = getAnionList('name', true);
             data.cationSymbols = getCationList('symbol', false);
             data.anionSymbols = getAnionList('symbol', false);
-            data.nameTheIon = randomIon();
         })
     }
 
-    const ionSymbolRadios = document.querySelectorAll('.ion-symbol-option');
-    for (let radioBtn of ionSymbolRadios) {
-        if (radioBtn.checked == true) {
-            data.ionType = radioBtn.value;
-            data.nameTheIon = randomIon();
-            domSelectors.ionSymbol.append(data.nameTheIon.getFormattedIon());
-        }
-    }
-    for (let radioBtn of ionSymbolRadios) {
-        radioBtn.addEventListener('click', () => {
-            if (radioBtn.checked == true) {
-                data.ionType = radioBtn.value;
-                domSelectors.ionSymbol.innerHTML = "";
-                data.nameTheIon = randomIon();
-                domSelectors.ionSymbol.append(data.nameTheIon.getFormattedIon());
-            }
-        })
-    }
+    domSelectors.newCationSymbol.addEventListener('click', (e) => {
+        e.preventDefault();
+        resetNameIon('cation');
+    })
+
+    domSelectors.newAnionSymbol.addEventListener('click', (e) => {
+        e.preventDefault();
+        resetNameIon('anion');
+    })
+
+    domSelectors.newRandomIonSymbol.addEventListener('click', (e) => {
+        e.preventDefault();
+        resetNameIon('both');
+    })
 
     domSelectors.checkIonNameBtn.addEventListener('click', (e) => {
         e.preventDefault();
         domSelectors.nameIonAnswer.innerHTML = "";
-
         checkIonName();
     })
 }

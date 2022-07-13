@@ -48,24 +48,23 @@
     </form>
     <form id="name-ion-section">
         <div id="ion-options">
-            <h2 class="no-margins">Name the Ion</h2>
-            <div class="options">
-                <input id="cation-symbol-option" name="ion-symbol-option" value="cation" type="radio" class="ion-symbol-option"/>
-                <label for="cation-symbol-option">Cation</label>
-            </div>
-            <div class="options">
-                <input id="anion-symbol-option" name="ion-symbol-option" value="anion" type="radio" class="ion-symbol-option"/>
-                <label for="anion-symbol-option">Anion</label>
-            </div>
-            <div class="options">
-                <input id="both-symbol-option" name="ion-symbol-option" value="both" type="radio" class="ion-symbol-option" checked/>
-                <label for="both-symbol-option">Both</label>
+            <h2>Name the Ion</h2>
+            <div class="button-group">
+                <button id="new-cation">New Cation</button>
+                <button id="new-anion">New Anion</button>
+                <button id="new-random-ion">New Random Ion</button>
             </div>
         </div>
         <div id="name-the-ion">
             <div id="ion-symbol"></div>
-            <input type="text" id="name-ion-answer" placeholder="Name the Ion" autocomplete="off"/>
-            <button id="check-ion-name">Check Answer</button>
+            <div>
+                <input type="text" id="name-ion-answer" placeholder="Name the Ion" autocomplete="off"/>
+                <div id="display-name-ion-answer"></div>
+            </div>
+            <div class="check-answer">
+                <button id="check-ion-name">Check Answer</button>
+            </div>
+            
         </div>
     </form>
     <form id="mg-bi-ionic">

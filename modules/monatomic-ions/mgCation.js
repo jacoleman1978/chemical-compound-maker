@@ -7,7 +7,7 @@ const mgCations = [
     ['silver', 'Ag', '+1'],
     ['magnesium', 'Mg', '+2'],
     ['calcium', 'Ca', '+2'],
-    ['cadium', 'Cd', '+2'],
+    ['cadmium', 'Cd', '+2'],
     ['zinc', 'Zn', '+2'],
     ['aluminum', 'Al', '+3']
 ];

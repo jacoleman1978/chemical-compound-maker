@@ -8,7 +8,6 @@ const data = {
     cationSymbols: getCationList('symbol', false),
     anionSymbols: getAnionList('symbol', false),
     compoundName: '',
-    ionType: 'both',
     nameTheIon: ''
 }
 
