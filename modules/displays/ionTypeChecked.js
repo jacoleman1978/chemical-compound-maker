@@ -6,6 +6,7 @@ import resetFormulaFromName from "../resetSection/resetFormulaFromName.js";
 import resetNameIon from "../resetSection/resetNameIon.js";
 import resetFormulaIon from "../resetSection/resetFormulaIon.js";
 import domSelectors from "../eventListeners/domSelectors.js";
+import resetNameCompound from "../resetSection/resetNameCompound.js";
 
 const ionTypeChecked = (event) => {
     let isMGIonsChecked = domSelectors.mgIons.checked;
@@ -22,6 +23,7 @@ const ionTypeChecked = (event) => {
         resetFormulaFromName();
         resetNameIon('both');
         resetFormulaIon('both');
+        resetNameCompound();
     } else {
         event.preventDefault();
         let htmlId = event.target.value;

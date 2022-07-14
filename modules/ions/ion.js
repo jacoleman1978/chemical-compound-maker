@@ -22,6 +22,10 @@ export default class Ion {
         return this.chargeMagnitude
     }
 
+    isPoly() {
+        return this.isPolyatomic
+    }
+
     getFormattedIon() {
         let ionDiv = document.createElement('div');
         

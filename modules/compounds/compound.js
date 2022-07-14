@@ -6,12 +6,14 @@ export default class Compound {
         this.catName = cation.getName();
         this.catChargeMagnitude = cation.getChargeMagnitude();
         this.cationSubscript = 1;
+        this.catIsPoly = cation.isPoly();
         this.anion = anion;
         this.anSymbol = anion.getSymbol();
         this.anCharge = anion.getCharge();
         this.anName = anion.getName();
         this.anChargeMagnitude = anion.getChargeMagnitude();
         this.anionSubscript = 1;
+        this.anIsPoly = anion.isPoly();
         this.formula = '';
     }
 
@@ -63,7 +65,24 @@ export default class Compound {
         this.findSubscripts();
 
         let formula = document.querySelector(htmlId);
-        formula.append(this.catSymbol);
+
+        if (this.cationSubscript > 1 && this.catIsPoly) {
+            formula.append('(');
+        }
+
+        for (let char of this.catSymbol) {
+            if (Number.isInteger(parseInt(char)) == false) {
+                formula.append(char);
+            } else {
+                let subscript = document.createElement('sub');
+                subscript.textContent = char;
+                formula.append(subscript);
+            }
+        }
+
+        if (this.cationSubscript > 1 && this.catIsPoly) {
+            formula.append(')');
+        }
         
         if (this.cationSubscript > 1) {
             let cationSubElement = document.createElement('sub');
@@ -71,7 +90,23 @@ export default class Compound {
             formula.append(cationSubElement);
         }
 
-        formula.append(this.anSymbol);
+        if (this.anionSubscript > 1 && this.anIsPoly == true) {
+            formula.append('(');
+        }
+
+        for (let char of this.anSymbol) {
+            if (Number.isInteger(parseInt(char)) == false) {
+                formula.append(char);
+            } else {
+                let subscript = document.createElement('sub');
+                subscript.textContent = char;
+                formula.append(subscript);
+            }
+        }
+
+        if (this.anionSubscript > 1 && this.anIsPoly == true) {
+            formula.append(')');
+        }
 
         if (this.anionSubscript > 1) {
             let anionSubElement = document.createElement('sub');
@@ -88,13 +123,43 @@ export default class Compound {
     getPlainFormula() {
         this.findSubscripts();
 
-        let plainFormula = this.catSymbol;
+        let plainFormula = "";
+
+        if (this.catIsPoly == true && this.cationSubscript > 1) {
+            plainFormula += '(';
+        }
+
+        for (let char of this.catSymbol) {
+            if (Number.isInteger(parseInt(char)) == false) {
+                plainFormula += char;
+            } else {
+                plainFormula += `/${char}`
+            }
+        }
+
+        if (this.catIsPoly == true && this.cationSubscript > 1) {
+            plainFormula += ')';
+        }
 
         if (this.cationSubscript > 1) {
             plainFormula += `/${this.cationSubscript}`;
         }
 
-        plainFormula += this.anSymbol;
+        if (this.anIsPoly == true && this.anionSubscript > 1) {
+            plainFormula += '(';
+        }
+
+        for (let char of this.anSymbol) {
+            if (Number.isInteger(parseInt(char)) == false) {
+                plainFormula += char;
+            } else {
+                plainFormula += `/${char}`
+            }
+        }
+
+        if (this.anIsPoly == true && this.anionSubscript > 1) {
+            plainFormula += ')';
+        }
 
         if (this.anionSubscript > 1) {
             plainFormula += `/${this.anionSubscript}`;
