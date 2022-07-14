@@ -35,6 +35,12 @@ const domSelectors = {
     formulaCompoundAnswer: document.querySelector('#formula-compound-answer'),
     displayFormulaCompoundAnswer: document.querySelector('#display-formula-compound-answer'),
     checkCompoundFromSymbolsBtn: document.querySelector('#check-compound-from-symbols-btn'),
+
+    newNameFromFormulaBtn: document.querySelector('#new-name-from-formula-btn'),
+    nameFromFormula: document.querySelector('#name-from-formula'),
+    nameFromFormulaAnswer: document.querySelector('#name-from-formula-answer'),
+    displayNameFromFormulaAnswer: document.querySelector('#display-name-from-formula-answer'),
+    checkNameFromFormulaBtn: document.querySelector('#check-name-from-formula-btn'),
 }
 
 export default domSelectors;

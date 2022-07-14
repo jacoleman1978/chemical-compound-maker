@@ -9,24 +9,8 @@
     <title>Compound Maker</title>
 </head>
 <body>
-    <h2>Options</h2>
+    <h2 class="add-bottom-margin">Options</h2>
     <form id="options">
-        <div id="included-types" class="outline">
-            Included Ion Types:
-            <div class="options">
-                <input class="types" type="checkbox" id="main-group-ions" name="main-group-ions" value="main-group-ions" checked/>
-                <label for="main-group-ions">Main Group Ions</label>
-            </div>
-            <div class="options">
-                <input class="types" type="checkbox" id="transition-metal-ions" name="transition-metal-ions" value="transition-metal-ions"/>
-                <label for="transition-metal-ions">Transition Metal Ions</label>
-            </div>
-            <div class="options">
-                <input class="types" type="checkbox" id="polyatomic-ions" name="polyatomic-ions" value="polyatomic-ions"/>
-                <label for="polyatomic-ions">Polyatomic Ions</label>
-            </div>
-
-        </div>
         <div class="outline">
             Included Compound Types:
             <div class="options">
@@ -40,6 +24,21 @@
             <div class="options">
                 <input class="types" type="checkbox" id="molecular" name="molecular" value="molecular"/>
                 <label for="molecular">Molecular</label>
+            </div>
+        </div>
+        <div class="outline">
+            Included Ion Types:
+            <div class="options">
+                <input class="types" type="checkbox" id="main-group-ions" name="main-group-ions" value="main-group-ions" checked/>
+                <label for="main-group-ions">Main Group Ions</label>
+            </div>
+            <div class="options">
+                <input class="types" type="checkbox" id="transition-metal-ions" name="transition-metal-ions" value="transition-metal-ions"/>
+                <label for="transition-metal-ions">Transition Metal Ions</label>
+            </div>
+            <div class="options">
+                <input class="types" type="checkbox" id="polyatomic-ions" name="polyatomic-ions" value="polyatomic-ions"/>
+                <label for="polyatomic-ions">Polyatomic Ions</label>
             </div>
         </div>
     </form>
@@ -103,6 +102,24 @@
             </div>
             <div class="flex-start">
                 <button id="check-compound-from-symbols-btn">Check Answer</button>
+            </div>
+        </div>
+    </form>
+    <form class="practice-forms">
+        <div class="ion-options">
+            <h2>Name from Formula</h2>
+            <div class="button-group">
+                <button id="new-name-from-formula-btn">New Compound</button>
+            </div>
+        </div>
+        <div class="ion-display">
+            <div id="name-from-formula"></div>
+            <div>
+                <input type="text" id="name-from-formula-answer" placeholder="Name of the Compound" autocomplete="off" class="input-width"/>
+                <div id="display-name-from-formula-answer"></div>
+            </div>
+            <div class="flex-start">
+                <button id="check-name-from-formula-btn">Check Answer</button>
             </div>
         </div>
     </form>

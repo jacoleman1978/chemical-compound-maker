@@ -1,5 +1,7 @@
 import domSelectors from "../eventListeners/domSelectors.js";
 import data from "../data.js";
+import getCationList from "../ions/getCationList.js";
+import getAnionList from "../ions/getAnionList.js";
 
 const types = document.querySelectorAll('.types')
 for (let type of types) {
@@ -9,8 +11,6 @@ for (let type of types) {
         domSelectors.anionDisplay.innerHTML = "";
 
         domSelectors.displayFormula.innerHTML = "";
-
-        domSelectors.displayName.innerHTML = "";
 
         data.cationNames = getCationList('name', true);
         data.anionNames = getAnionList('name', true);

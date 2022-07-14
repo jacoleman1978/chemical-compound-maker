@@ -27,6 +27,10 @@ h2 {
     justify-content: space-around;
 }
 
+.add-bottom-margin {
+    margin-bottom: 0.5rem;
+}
+
 #options {
     display: flex;
     flex-wrap: wrap;
@@ -81,6 +85,7 @@ h2 {
     gap: 0.5rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 button {

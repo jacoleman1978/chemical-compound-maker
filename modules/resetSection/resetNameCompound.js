@@ -7,6 +7,9 @@ const resetNameCompound = () => {
     domSelectors.displayNameCompoundAnswer.innerHTML = "";
     domSelectors.nameCompoundAnswer.style.backgroundColor = "";
     domSelectors.nameCompoundAnswer.value = "";
+    domSelectors.displayFormulaCompoundAnswer.innerHTML = "";
+    domSelectors.formulaCompoundAnswer.style.backgroundColor = "";
+    domSelectors.formulaCompoundAnswer.value = "";
     randomCompound('symbol');
 }
 

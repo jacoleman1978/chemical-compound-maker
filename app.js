@@ -13,6 +13,7 @@ const main = () => {
     domSelectors.ionName.append(data.ionFormula.getName());
 
     randomCompound('symbol');
+    randomCompound('name');
 }
 
 main();
