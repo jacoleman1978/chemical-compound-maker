@@ -2,6 +2,7 @@ import domSelectors from "./modules/eventListeners/domSelectors.js";
 import data from "./modules/data.js";
 import "./modules/eventListeners/eventListeners.js";
 import randomIon from "./modules/ions/randomIon.js";
+import randomCompound from "./modules/compounds/randomCompound.js";
 
 
 const main = () => {
@@ -10,6 +11,8 @@ const main = () => {
 
     data.ionFormula = randomIon('both');
     domSelectors.ionName.append(data.ionFormula.getName());
+
+    randomCompound('symbol');
 }
 
 main();

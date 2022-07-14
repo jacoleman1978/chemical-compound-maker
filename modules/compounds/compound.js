@@ -1,17 +1,26 @@
 export default class Compound {
     constructor(cation, anion) {
+        this.cation = cation;
         this.catSymbol = cation.getSymbol();
         this.catCharge = cation.getCharge();
         this.catName = cation.getName();
         this.catChargeMagnitude = cation.getChargeMagnitude();
         this.cationSubscript = 1;
+        this.anion = anion;
         this.anSymbol = anion.getSymbol();
         this.anCharge = anion.getCharge();
         this.anName = anion.getName();
         this.anChargeMagnitude = anion.getChargeMagnitude();
         this.anionSubscript = 1;
-
         this.formula = '';
+    }
+
+    getCationObject() {
+        return this.cation
+    }
+
+    getAnionObject() {
+        return this.anion
     }
 
     getName() {

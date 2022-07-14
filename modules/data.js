@@ -9,7 +9,8 @@ const data = {
     compoundName: '',
     nameTheIon: '',
     ionFormula: '',
-    playgroundCompound: ""
+    playgroundCompound: "",
+    compoundFromSymbols: ""
 }
 
 export default data;

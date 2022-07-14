@@ -26,6 +26,15 @@ const domSelectors = {
     checkIonFormulaBtn: document.querySelector('#check-ion-formula'),
     formulaIonAnswer: document.querySelector('#formula-ion-answer'),
     displayFormulaIonAnswer: document.querySelector('#display-formula-ion-answer'),
+
+    newCompoundFormulaBtn: document.querySelector('#new-compound-formula-btn'),
+    compoundCationSymbol: document.querySelector('#compound-cation-symbol'),
+    compoundAnionSymbol: document.querySelector('#compound-anion-symbol'),
+    nameCompoundAnswer: document.querySelector('#name-compound-answer'),
+    displayNameCompoundAnswer: document.querySelector('#display-name-compound-answer'),
+    formulaCompoundAnswer: document.querySelector('#formula-compound-answer'),
+    displayFormulaCompoundAnswer: document.querySelector('#display-formula-compound-answer'),
+    checkCompoundFromSymbolsBtn: document.querySelector('#check-compound-from-symbols-btn'),
 }
 
 export default domSelectors;
