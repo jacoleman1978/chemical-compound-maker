@@ -1,6 +1,5 @@
-import getAnionList from "./getAnionList.js";
-import getCationList from "./getCationList.js";
-import randomIon from "./randomIon.js";
+import getAnionList from "./ions/getAnionList.js";
+import getCationList from "./ions/getCationList.js";
 
 const data = {
     cationNames: getCationList('name', true),

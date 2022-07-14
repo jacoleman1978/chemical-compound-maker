@@ -93,4 +93,27 @@ export default class Compound {
 
         return plainFormula
     }
+
+    polyIonConversion() {
+        let ionDiv = document.createElement('div');
+
+        if (isPoly == true) {
+            ionDiv.append('(');
+        }
+
+        for (let char of symbol) {
+            if (Number.isInteger(parseInt(char)) == false) {
+                ionDiv.append(char);
+            } else {
+                let subscript = document.createElement('sub');
+                subscript.textContent = char;
+                ionDiv.append(subscript)
+            }
+        }
+         if (isPoly == true) {
+            ionDiv.append(')');
+         }
+
+        return ionDiv
+    }
 }

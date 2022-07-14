@@ -22,7 +22,7 @@ export default class Ion {
         return this.chargeMagnitude
     }
 
-    getFormattedIon(htmlId) {
+    getFormattedIon() {
         let ionDiv = document.createElement('div');
         ionDiv.append(this.symbol);
         let chargeDisplay = document.createElement('sup');
@@ -33,5 +33,21 @@ export default class Ion {
 
     getPlainFormula() {
         return `${this.symbol}^${this.charge}`
+    }
+
+    polyIonConversion() {
+        let ionDiv = document.createElement('div');
+
+        for (let char of symbol) {
+            if (Number.isInteger(parseInt(char)) == false) {
+                ionDiv.append(char);
+            } else {
+                let subscript = document.createElement('sub');
+                subscript.textContent = char;
+                ionDiv.append(subscript)
+            }
+        }
+
+        return ionDiv
     }
 }

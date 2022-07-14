@@ -1,5 +1,5 @@
-import domSelectors from "./domSelectors.js";
-import mgAnionsOptions from "./monatomic-ions/mgAnion.js";
+import domSelectors from "../eventListeners/domSelectors.js";
+import mgAnionsOptions from "./mgAnion.js";
 
 const getAnionList = (displayType, isDropdownList) => {
     let anionOptions = [];

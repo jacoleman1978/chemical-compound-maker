@@ -1,4 +1,4 @@
-import Ion from "../ion.js";
+import Ion from "./ion.js";
 
 const mgCations = [
     ['lithium', 'Li', '+1', false],

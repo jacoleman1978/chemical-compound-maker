@@ -1,6 +1,6 @@
-import domSelectors from "./domSelectors.js";
-import data from "./data.js";
-import randomIon from "./randomIon.js";
+import domSelectors from "../eventListeners/domSelectors.js";
+import data from "../data.js";
+import randomIon from "../ions/randomIon.js";
 
 const resetNameIon = (ionType) => {
     domSelectors.ionSymbol.innerHTML = "";

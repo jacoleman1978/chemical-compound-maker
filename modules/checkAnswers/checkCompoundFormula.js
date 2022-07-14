@@ -1,5 +1,5 @@
-import data from "./data.js";
-import domSelectors from "./domSelectors.js";
+import data from "../data.js";
+import domSelectors from "../eventListeners/domSelectors.js";
 
 const checkCompoundFormula = () => {
     let userAnswer = domSelectors.formulaAnswer.value.trim();

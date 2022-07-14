@@ -1,4 +1,4 @@
-import Ion from "../ion.js";
+import Ion from "./ion.js";
 
 const mgAnions = [
     ['fluoride', 'F', '-1', false],

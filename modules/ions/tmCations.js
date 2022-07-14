@@ -1,4 +1,4 @@
-import Ion from "../ion.js";
+import Ion from "./ion.js";
 
 const tsCations = [
     ['copper(I)', 'Cu', '+1', false],

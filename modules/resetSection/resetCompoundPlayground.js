@@ -1,6 +1,4 @@
-import domSelectors from "./domSelectors.js";
-import data from "./data.js";
-import randomIon from "./randomIon.js";
+import domSelectors from "../eventListeners/domSelectors.js";
 
 const resetCompoundPlayground = (ionType) => {
     domSelectors.formulaAnswer.innerHTML = "";

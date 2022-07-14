@@ -1,6 +1,6 @@
-import domSelectors from "./domSelectors.js";
-import mgCationsOptions from "./monatomic-ions/mgCation.js";
-import tsCationsOptions from "./transition-metal-ions/tmCations.js";
+import domSelectors from "../eventListeners/domSelectors.js";
+import mgCationsOptions from "./mgCation.js";
+import tsCationsOptions from "./tmCations.js";
 
 const getCationList = (displayType, isDropdownList) => {
     let cationOptions = [];

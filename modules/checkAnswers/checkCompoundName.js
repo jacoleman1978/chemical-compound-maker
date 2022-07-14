@@ -1,5 +1,5 @@
-import data from "./data.js";
-import domSelectors from "./domSelectors.js";
+import data from "../data.js";
+import domSelectors from "../eventListeners/domSelectors.js";
 
 const checkCompoundName = () => {
     let userAnswer = domSelectors.nameAnswer.value.trim().toLowerCase();

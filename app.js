@@ -1,15 +1,8 @@
-import domSelectors from "./modules/domSelectors.js";
-import getCationList from "./modules/getCationList.js";
-import getAnionList from "./modules/getAnionList.js";
-import makeCompound from "./modules/makeCompound.js";
+import domSelectors from "./modules/eventListeners/domSelectors.js";
 import data from "./modules/data.js";
-import randomIon from "./modules/randomIon.js";
-import checkIonName from "./modules/checkIonName.js";
-import resetNameIon from "./modules/resetNameIon.js";
-import checkIonFormula from "./modules/checkIonFormula.js";
-import resetFormulaIon from "./modules/resetFormulaIon.js";
-import checkCompoundFormula from "./modules/checkCompoundFormula.js";
-import resetCompoundPlayground from "./modules/resetCompoundPlayground.js";
+import "./modules/eventListeners/eventListeners.js";
+import randomIon from "./modules/ions/randomIon.js";
+
 
 const main = () => {
     data.nameTheIon = randomIon('both');
@@ -17,93 +10,6 @@ const main = () => {
 
     data.ionFormula = randomIon('both');
     domSelectors.ionName.append(data.ionFormula.getName());
-
-    domSelectors.cationDropdown.addEventListener("change", (e) => {
-        domSelectors.cationDisplay.innerHTML = "";
-
-        resetCompoundPlayground();
-
-        let formattedIon = data.cationNames[e.target.value].getFormattedIon();
-        domSelectors.cationDisplay.append(formattedIon);
-    })
-
-    domSelectors.anionDropdown.addEventListener("change", (e) => {
-        domSelectors.anionDisplay.innerHTML = "";
-
-        resetCompoundPlayground();
-
-        let formattedIon = data.anionNames[e.target.value].getFormattedIon();
-        domSelectors.anionDisplay.append(formattedIon);
-    });
-
-    domSelectors.displayFormulaBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        domSelectors.displayFormula.innerHTML = "";
-
-        makeCompound('name');
-
-        checkCompoundFormula();
-    })
-    
-    const types = document.querySelectorAll('.types')
-    for (let type of types) {
-        type.addEventListener('click', () => {
-            domSelectors.cationDisplay.innerHTML = "";
-
-            domSelectors.anionDisplay.innerHTML = "";
-
-            domSelectors.displayFormula.innerHTML = "";
-
-            domSelectors.displayName.innerHTML = "";
-
-            data.cationNames = getCationList('name', true);
-            data.anionNames = getAnionList('name', true);
-            data.cationSymbols = getCationList('symbol', false);
-            data.anionSymbols = getAnionList('symbol', false);
-        })
-    }
-
-    domSelectors.newCationSymbol.addEventListener('click', (e) => {
-        e.preventDefault();
-        resetNameIon('cation');
-    })
-
-    domSelectors.newAnionSymbol.addEventListener('click', (e) => {
-        e.preventDefault();
-        resetNameIon('anion');
-    })
-
-    domSelectors.newRandomIonSymbol.addEventListener('click', (e) => {
-        e.preventDefault();
-        resetNameIon('both');
-    })
-
-    domSelectors.checkIonNameBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        domSelectors.nameIonAnswer.innerHTML = "";
-        checkIonName();
-    })
-
-    domSelectors.newCationName.addEventListener('click', (e) => {
-        e.preventDefault();
-        resetFormulaIon('cation');
-    })
-
-    domSelectors.newAnionName.addEventListener('click', (e) => {
-        e.preventDefault();
-        resetFormulaIon('anion');
-    })
-
-    domSelectors.newRandomIonName.addEventListener('click', (e) => {
-        e.preventDefault();
-        resetFormulaIon('both');
-    })
-
-    domSelectors.checkIonFormulaBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        domSelectors.nameIonAnswer.innerHTML = "";
-        checkIonFormula();
-    })
 }
 
 main();
