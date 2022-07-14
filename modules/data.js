@@ -12,6 +12,7 @@ const data = {
     playgroundCompound: "",
     compoundFromSymbols: "",
     compoundNameFromFormula: "",
+    compoundFormulaFromName: "",
 }
 
 export default data;

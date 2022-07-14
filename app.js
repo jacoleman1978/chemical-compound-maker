@@ -14,6 +14,7 @@ const main = () => {
 
     randomCompound('symbol');
     randomCompound('name');
+    randomCompound('formula');
 }
 
 main();

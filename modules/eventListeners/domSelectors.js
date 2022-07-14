@@ -41,6 +41,12 @@ const domSelectors = {
     nameFromFormulaAnswer: document.querySelector('#name-from-formula-answer'),
     displayNameFromFormulaAnswer: document.querySelector('#display-name-from-formula-answer'),
     checkNameFromFormulaBtn: document.querySelector('#check-name-from-formula-btn'),
+
+    newFormulaFromNameBtn: document.querySelector('#new-formula-from-name-btn'),
+    formulaFromName: document.querySelector('#formula-from-name'),
+    formulaFromNameAnswer: document.querySelector('#formula-from-name-answer'),
+    displayFormulaFromNameAnswer: document.querySelector('#display-formula-from-name-answer'),
+    checkFormulaFromNameBtn: document.querySelector('#check-formula-from-name-btn'),
 }
 
 export default domSelectors;
