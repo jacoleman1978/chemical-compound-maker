@@ -6,6 +6,7 @@ h2 {
     margin-bottom: 0rem;
     margin-left: 1rem;
     margin-right: 1rem;
+    font-size: large;
 }
 
 .flex-display {
@@ -15,6 +16,7 @@ h2 {
 .flex-center {
     display: flex;
     justify-content: center;
+    gap: 0.5rem;
 }
 
 .flex-start {
@@ -37,7 +39,6 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 1rem;
 }
 
 .options {
@@ -48,6 +49,9 @@ h2 {
     padding: 0.5rem;
     border: solid gray 1px;
     width: 12rem;
+    border-radius: 10px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 

@@ -9,79 +9,84 @@
     <title>Compound Maker</title>
 </head>
 <body>
-    <h2 class="add-bottom-margin">Options</h2>
-    <form id="options">
-        <div class="outline">
-            Included Compound Types:
-            <div class="options">
-                <input class="compound-types" type="radio" id="ionic" name="type" value="ionic" checked/>
-                <label for="ionic">Ionic</label>
+    <div class="practice-forms">
+        <h2 class="add-bottom-margin">Options</h2>
+        <form id="options">
+            <div class="outline">
+                Included Compound Types:
+                <div class="options">
+                    <input class="compound-types" type="radio" id="ionic" name="type" value="ionic" checked/>
+                    <label for="ionic">Ionic</label>
+                </div>
+                <div class="options">
+                    <input class="compound-types" type="radio" id="acids" name="type" value="acids"/>
+                    <label for="acids">Acids</label>
+                </div>
+                <div class="options">
+                    <input class="compound-types" type="radio" id="molecular" name="type" value="molecular"/>
+                    <label for="molecular">Molecular</label>
+                </div>
             </div>
-            <div class="options">
-                <input class="compound-types" type="radio" id="acids" name="type" value="acids"/>
-                <label for="acids">Acids</label>
+            <div id="ion-types" class="outline ionic-only">
+                Included Ion Types:
+                <div class="options">
+                    <input class="ion-types" type="checkbox" id="main-group-ions" name="main-group-ions" value="main-group-ions" checked/>
+                    <label for="main-group-ions">Main Group Ions</label>
+                </div>
+                <div id="transition-metals-option" class="options">
+                    <input class="ion-types" type="checkbox" id="transition-metal-ions" name="transition-metal-ions" value="transition-metal-ions"/>
+                    <label for="transition-metal-ions">Transition Metal Ions</label>
+                </div>
+                <div class="options">
+                    <input class="ion-types" type="checkbox" id="polyatomic-ions" name="polyatomic-ions" value="polyatomic-ions"/>
+                    <label for="polyatomic-ions">Polyatomic Ions</label>
+                </div>
             </div>
-            <div class="options">
-                <input class="compound-types" type="radio" id="molecular" name="type" value="molecular"/>
-                <label for="molecular">Molecular</label>
+        </form>
+    </div>
+    <div class="flex-center">
+        <form id="name-ion-section" class="practice-forms ionic-only">
+            <div class="ion-options">
+                <h2>Name of the Ion</h2>
+                <div class="button-group">
+                    <button id="new-cation-symbol">New Cation</button>
+                    <button id="new-anion-symbol">New Anion</button>
+                    <button id="new-random-ion-symbol">New Random Ion</button>
+                </div>
             </div>
-        </div>
-        <div id="ion-types" class="outline ionic-only">
-            Included Ion Types:
-            <div class="options">
-                <input class="ion-types" type="checkbox" id="main-group-ions" name="main-group-ions" value="main-group-ions" checked/>
-                <label for="main-group-ions">Main Group Ions</label>
+            <div class="ion-display">
+                <div id="ion-symbol"></div>
+                <div>
+                    <input type="text" id="name-ion-answer" placeholder="Name of the Ion" autocomplete="off"/>
+                    <div id="display-name-ion-answer"></div>
+                </div>
+                <div class="flex-start">
+                    <button id="check-ion-name">Check Answer</button>
+                </div>
             </div>
-            <div id="transition-metals-option" class="options">
-                <input class="ion-types" type="checkbox" id="transition-metal-ions" name="transition-metal-ions" value="transition-metal-ions"/>
-                <label for="transition-metal-ions">Transition Metal Ions</label>
+        </form>
+        <form id="formula-ion-section" class="practice-forms ionic-only">
+            <div class="ion-options">
+                <h2>Formula of the Ion</h2>
+                <div class="button-group">
+                    <button id="new-cation-name">New Cation</button>
+                    <button id="new-anion-name">New Anion</button>
+                    <button id="new-random-ion-name">New Random Ion</button>
+                </div>
             </div>
-            <div class="options">
-                <input class="ion-types" type="checkbox" id="polyatomic-ions" name="polyatomic-ions" value="polyatomic-ions"/>
-                <label for="polyatomic-ions">Polyatomic Ions</label>
+            <div class="ion-display">
+                <div id="ion-name"></div>
+                <div>
+                    <input type="text" id="formula-ion-answer" placeholder="Formula of the Ion" autocomplete="off"/>
+                    <div id="display-formula-ion-answer"></div>
+                </div>
+                <div class="flex-start">
+                    <button id="check-ion-formula">Check Answer</button>
+                </div>
             </div>
-        </div>
-    </form>
-    <form id="name-ion-section" class="practice-forms ionic-only">
-        <div class="ion-options">
-            <h2>Name of the Ion</h2>
-            <div class="button-group">
-                <button id="new-cation-symbol">New Cation</button>
-                <button id="new-anion-symbol">New Anion</button>
-                <button id="new-random-ion-symbol">New Random Ion</button>
-            </div>
-        </div>
-        <div class="ion-display">
-            <div id="ion-symbol"></div>
-            <div>
-                <input type="text" id="name-ion-answer" placeholder="Name of the Ion" autocomplete="off"/>
-                <div id="display-name-ion-answer"></div>
-            </div>
-            <div class="flex-start">
-                <button id="check-ion-name">Check Answer</button>
-            </div>
-        </div>
-    </form>
-    <form id="formula-ion-section" class="practice-forms ionic-only">
-        <div class="ion-options">
-            <h2>Formula of the Ion</h2>
-            <div class="button-group">
-                <button id="new-cation-name">New Cation</button>
-                <button id="new-anion-name">New Anion</button>
-                <button id="new-random-ion-name">New Random Ion</button>
-            </div>
-        </div>
-        <div class="ion-display">
-            <div id="ion-name"></div>
-            <div>
-                <input type="text" id="formula-ion-answer" placeholder="Formula of the Ion" autocomplete="off"/>
-                <div id="display-formula-ion-answer"></div>
-            </div>
-            <div class="flex-start">
-                <button id="check-ion-formula">Check Answer</button>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
+ 
     <form id="compound-from-symbols-display" class="practice-forms">
         <div class="ion-options">
             <h2>Compound from Symbols</h2>
@@ -105,42 +110,45 @@
             </div>
         </div>
     </form>
-    <form class="practice-forms">
-        <div class="ion-options">
-            <h2>Name from Formula</h2>
-            <div class="button-group">
-                <button id="new-name-from-formula-btn">New Compound</button>
+    <div class="flex-center">
+        <form class="practice-forms">
+            <div class="ion-options">
+                <h2>Name from Formula</h2>
+                <div class="button-group">
+                    <button id="new-name-from-formula-btn">New Compound</button>
+                </div>
             </div>
-        </div>
-        <div class="ion-display">
-            <div id="name-from-formula"></div>
-            <div>
-                <input type="text" id="name-from-formula-answer" placeholder="Name of the Compound" autocomplete="off" class="input-width"/>
-                <div id="display-name-from-formula-answer"></div>
+            <div class="ion-display">
+                <div id="name-from-formula"></div>
+                <div>
+                    <input type="text" id="name-from-formula-answer" placeholder="Name of the Compound" autocomplete="off" class="input-width"/>
+                    <div id="display-name-from-formula-answer"></div>
+                </div>
+                <div class="flex-start">
+                    <button id="check-name-from-formula-btn">Check Answer</button>
+                </div>
             </div>
-            <div class="flex-start">
-                <button id="check-name-from-formula-btn">Check Answer</button>
+        </form>
+        <form class="practice-forms">
+            <div class="ion-options">
+                <h2>Formula from Name</h2>
+                <div class="button-group">
+                    <button id="new-formula-from-name-btn">New Compound</button>
+                </div>
             </div>
-        </div>
-    </form>
-    <form class="practice-forms">
-        <div class="ion-options">
-            <h2>Formula from Name</h2>
-            <div class="button-group">
-                <button id="new-formula-from-name-btn">New Compound</button>
+            <div class="ion-display">
+                <div id="formula-from-name"></div>
+                <div>
+                    <input type="text" id="formula-from-name-answer" placeholder="Formula of the Compound" autocomplete="off" class="input-width"/>
+                    <div id="display-formula-from-name-answer"></div>
+                </div>
+                <div class="flex-start">
+                    <button id="check-formula-from-name-btn">Check Answer</button>
+                </div>
             </div>
-        </div>
-        <div class="ion-display">
-            <div id="formula-from-name"></div>
-            <div>
-                <input type="text" id="formula-from-name-answer" placeholder="Formula of the Compound" autocomplete="off" class="input-width"/>
-                <div id="display-formula-from-name-answer"></div>
-            </div>
-            <div class="flex-start">
-                <button id="check-formula-from-name-btn">Check Answer</button>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
+    
     <form id="compound-formula-playground" class="practice-forms ionic-only">
         <h2>Compound Formula Playground</h2>
         <div class="flex-around-start">
