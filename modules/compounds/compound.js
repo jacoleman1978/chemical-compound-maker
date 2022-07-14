@@ -1,3 +1,5 @@
+import domSelectors from "../eventListeners/domSelectors.js";
+
 export default class Compound {
     constructor(cation, anion) {
         this.cation = cation;
@@ -26,7 +28,31 @@ export default class Compound {
     }
 
     getName() {
-        return `${this.catName} ${this.anName}`
+        if (domSelectors.includeAcids) {
+            let anionSuffix = this.anName.slice(-3);
+            let anionRoot = this.anName.slice(0, -3);
+
+            if (anionRoot == 'sulf') {
+                anionRoot = 'sulfur';
+
+            } else if (anionRoot == 'phosph') {
+                anionRoot = 'phosphor';
+            }
+
+            if (anionSuffix == 'ate') {
+                return `${anionRoot}ic acid`
+
+            } else if (anionSuffix == 'ite') {
+                return `${anionRoot}ous acid`
+
+            } else if (anionSuffix == 'ide') {
+                return `hydro${anionRoot}ic acid`
+            }
+
+        } else {
+            return `${this.catName} ${this.anName}`
+        }
+        
     }
 
     findSubscripts() {
