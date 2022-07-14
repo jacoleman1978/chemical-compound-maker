@@ -1,4 +1,15 @@
 const domSelectors = {
+    includeIonic: document.querySelector('#ionic'),
+    includeAcids: document.querySelector('#acids'),
+    includeMolecular: document.querySelector('#molecular'),
+
+    ionicTypesDisplay: document.querySelector('#ion-types'),
+    transitionMetalDisplay: document.querySelector('#transition-metals-option'),
+    nameIonDisplay: document.querySelector('#name-ion-section'),
+    formulaIonDisplay: document.querySelector('#formula-ion-section'),
+    compoundFromSymbolsDisplay: document.querySelector('#compound-from-symbols-display'),
+    compoundPlaygroundDisplay: document.querySelector('#compound-formula-playground'),
+
     mgIons: document.querySelector('#main-group-ions'),
     tsIons: document.querySelector('#transition-metal-ions'),
     polyIons: document.querySelector('#polyatomic-ions'),

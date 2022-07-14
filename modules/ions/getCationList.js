@@ -2,22 +2,30 @@ import domSelectors from "../eventListeners/domSelectors.js";
 import mgCationsOptions from "./mgCation.js";
 import tsCationsOptions from "./tmCations.js";
 import polyCationOptions from "./polyCation.js";
+import Ion from "./ion.js";
 
 const getCationList = (displayType, isDropdownList) => {
+    let isIonicChecked = domSelectors.includeIonic.checked;
+    let isAcidChecked = domSelectors.includeAcids.checked;
+
     let cationOptions = [];
     
-    if (domSelectors.mgIons.checked == true) {
-        cationOptions = [...mgCationsOptions]
-    }
-
-    if (domSelectors.tsIons.checked == true) {
-        cationOptions = [...cationOptions, ...tsCationsOptions]
-    }
-
-    if (domSelectors.polyIons.checked == true) {
-        cationOptions = [...cationOptions, ...polyCationOptions];
-    }
+    if (isIonicChecked == true) {
+        if (domSelectors.mgIons.checked == true) {
+            cationOptions = [...mgCationsOptions]
+        }
     
+        if (domSelectors.tsIons.checked == true) {
+            cationOptions = [...cationOptions, ...tsCationsOptions]
+        }
+    
+        if (domSelectors.polyIons.checked == true) {
+            cationOptions = [...cationOptions, ...polyCationOptions];
+        }
+    } else if (isAcidChecked == true) {
+        cationOptions = [new Ion("hydrogen", "H", "+1", false)]
+    }
+
     if (isDropdownList == true) {
         domSelectors.cationDropdown.innerHTML = "";
         let option = document.createElement('option');

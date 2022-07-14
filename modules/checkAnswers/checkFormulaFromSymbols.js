@@ -1,4 +1,4 @@
-import data from "../data.js";
+import data from "../displays/data.js";
 import domSelectors from "../eventListeners/domSelectors.js";
 
 const checkFormulaFromSymbols = () => {

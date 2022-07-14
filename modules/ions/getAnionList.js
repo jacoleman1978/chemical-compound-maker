@@ -1,21 +1,43 @@
 import domSelectors from "../eventListeners/domSelectors.js";
 import mgAnionsOptions from "./mgAnion.js";
 import polyAnionOptions from "./polyAnion.js";
+import mgAcidAnionsOptions from "./mgAcidAnion.js"
+import polyAcidAnionOptions from "./polyAcidAnion.js"
 
 const getAnionList = (displayType, isDropdownList) => {
-    let anionOptions = [];
+    let isIonicChecked = domSelectors.includeIonic.checked;
+    let isAcidChecked = domSelectors.includeAcids.checked;
     
-    if (domSelectors.mgIons.checked == true) {
-        anionOptions = [...mgAnionsOptions];
+    let anionOptions = [];
+
+    if (isIonicChecked == true) {
+        if (domSelectors.mgIons.checked == true) {
+            anionOptions = [...mgAnionsOptions];
+        }
+    
+        if (domSelectors.tsIons.checked == true) {
+            anionOptions = [...mgAnionsOptions];
+        }
+
+        if (domSelectors.polyIons.checked == true) {
+            anionOptions = [...anionOptions, ...polyAnionOptions];
+        }
     }
 
-    if (domSelectors.tsIons.checked == true) {
-        anionOptions = [...mgAnionsOptions];
-    }
+    if (isAcidChecked == true) {
+        if (domSelectors.mgIons.checked == true) {
+            anionOptions = [...mgAcidAnionsOptions];
+        }
 
-    if (domSelectors.polyIons.checked == true) {
-        anionOptions = [...anionOptions, ...polyAnionOptions];
+        if (domSelectors.polyIons.checked == true) {
+            anionOptions = [...anionOptions, ...polyAcidAnionOptions];
+        }
     }
+    
+
+    
+    
+
     
     if (isDropdownList == true) {
         domSelectors.anionDropdown.innerHTML = "";

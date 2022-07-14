@@ -1,4 +1,4 @@
-import data from "../data.js";
+import data from "../displays/data.js";
 
 const randomIon = (ionType) => {
     if (ionType === 'both') {

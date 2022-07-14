@@ -1,6 +1,6 @@
 import Compound from "./compound.js";
 import domSelectors from "../eventListeners/domSelectors.js";
-import data from "../data.js";
+import data from "../displays/data.js";
 
 const makeCompound = (displayType) => {
     if (displayType === 'name') {

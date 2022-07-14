@@ -1,5 +1,5 @@
 import domSelectors from "../eventListeners/domSelectors.js";
-import data from "../data.js";
+import data from "../displays/data.js";
 import resetCompoundPlayground from "../resetSection/resetCompoundPlayground.js";
 import makeCompound from "../compounds/makeCompound.js";
 import checkCompoundFormula from "../checkAnswers/checkCompoundFormula.js";

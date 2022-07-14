@@ -1,5 +1,5 @@
 import domSelectors from "../eventListeners/domSelectors.js";
-import data from "../data.js";
+import data from "../displays/data.js";
 import randomIon from "../ions/randomIon.js";
 import Compound from "./compound.js";
 
