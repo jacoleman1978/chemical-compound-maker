@@ -24,30 +24,43 @@ export default class Ion {
 
     getFormattedIon() {
         let ionDiv = document.createElement('div');
-        ionDiv.append(this.symbol);
+        
+        if (this.isPolyatomic == true) {
+            for (let char of this.symbol) {
+                if (Number.isInteger(parseInt(char)) == false) {
+                    ionDiv.append(char);
+                } else {
+                    let subscript = document.createElement('sub');
+                    subscript.textContent = char;
+                    ionDiv.append(subscript)
+                }
+            }
+        } else {
+            ionDiv.append(this.symbol);
+
+        }
+
         let chargeDisplay = document.createElement('sup');
         chargeDisplay.textContent = this.charge;
         ionDiv.append(chargeDisplay);
+
         return ionDiv
+        
     }
 
     getPlainFormula() {
-        return `${this.symbol}^${this.charge}`
-    }
-
-    polyIonConversion() {
-        let ionDiv = document.createElement('div');
-
-        for (let char of symbol) {
-            if (Number.isInteger(parseInt(char)) == false) {
-                ionDiv.append(char);
-            } else {
-                let subscript = document.createElement('sub');
-                subscript.textContent = char;
-                ionDiv.append(subscript)
+        if (this.isPolyatomic == true) {
+            let plainFormula = "";
+            for (let char of this.symbol) {
+                if (Number.isInteger(parseInt(char)) == false) {
+                    plainFormula += char;
+                } else {
+                    plainFormula += `/${char}`
+                }
             }
+            return `${plainFormula}^${this.charge}`
+        } else {
+            return `${this.symbol}^${this.charge}`
         }
-
-        return ionDiv
     }
 }

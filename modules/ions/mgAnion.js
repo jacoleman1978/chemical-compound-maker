@@ -12,7 +12,7 @@ const mgAnions = [
     ['carbide', 'C', '-4', false]
 ];
 
-const mgAnionsOptions = mgAnions.map((anion, i) => {
+const mgAnionsOptions = mgAnions.map((anion) => {
     let ion = new Ion(anion[0], anion[1], anion[2], anion[3]);
     
     return ion

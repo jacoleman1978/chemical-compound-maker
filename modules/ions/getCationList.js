@@ -1,6 +1,7 @@
 import domSelectors from "../eventListeners/domSelectors.js";
 import mgCationsOptions from "./mgCation.js";
 import tsCationsOptions from "./tmCations.js";
+import polyCationOptions from "./polyCation.js";
 
 const getCationList = (displayType, isDropdownList) => {
     let cationOptions = [];
@@ -11,6 +12,10 @@ const getCationList = (displayType, isDropdownList) => {
 
     if (domSelectors.tsIons.checked == true) {
         cationOptions = [...cationOptions, ...tsCationsOptions]
+    }
+
+    if (domSelectors.polyIons.checked == true) {
+        cationOptions = [...cationOptions, ...polyCationOptions];
     }
     
     if (isDropdownList == true) {

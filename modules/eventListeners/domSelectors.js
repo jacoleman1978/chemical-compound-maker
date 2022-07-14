@@ -1,6 +1,7 @@
 const domSelectors = {
     mgIons: document.querySelector('#main-group-ions'),
     tsIons: document.querySelector('#transition-metal-ions'),
+    polyIons: document.querySelector('#polyatomic-ions'),
 
     cationDropdown: document.querySelector('#cation-dropdown'),
     anionDropdown: document.querySelector('#anion-dropdown'),

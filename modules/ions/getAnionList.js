@@ -1,5 +1,6 @@
 import domSelectors from "../eventListeners/domSelectors.js";
 import mgAnionsOptions from "./mgAnion.js";
+import polyAnionOptions from "./polyAnion.js";
 
 const getAnionList = (displayType, isDropdownList) => {
     let anionOptions = [];
@@ -10,6 +11,10 @@ const getAnionList = (displayType, isDropdownList) => {
 
     if (domSelectors.tsIons.checked == true) {
         anionOptions = [...mgAnionsOptions];
+    }
+
+    if (domSelectors.polyIons.checked == true) {
+        anionOptions = [...anionOptions, ...polyAnionOptions];
     }
     
     if (isDropdownList == true) {
