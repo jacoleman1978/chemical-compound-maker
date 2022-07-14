@@ -28,7 +28,7 @@ export default class Compound {
     }
 
     getName() {
-        if (domSelectors.includeAcids) {
+        if (domSelectors.includeAcids.checked == true) {
             let anionSuffix = this.anName.slice(-3);
             let anionRoot = this.anName.slice(0, -3);
 
