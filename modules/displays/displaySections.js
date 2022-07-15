@@ -40,6 +40,8 @@ const displaySections = (compoundType) => {
         domSelectors.formulaIonDisplay.style.display = 'none';
         domSelectors.compoundFromSymbolsDisplay.style.display = 'none';
         domSelectors.compoundPlaygroundDisplay.style.display = 'none';
+        resetNameFromFormula();
+        resetFormulaFromName();
     }
 }
 

@@ -3,6 +3,7 @@ import data from "./modules/displays/data.js";
 import "./modules/eventListeners/eventListeners.js";
 import randomIon from "./modules/ions/randomIon.js";
 import randomCompound from "./modules/compounds/randomCompound.js";
+import randomMolecular from "./modules/compounds/randomMolecular.js";
 
 
 const main = () => {

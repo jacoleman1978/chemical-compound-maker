@@ -4,6 +4,11 @@ import domSelectors from "../eventListeners/domSelectors.js";
 const checkNameFromFormula = () => {
     let answer = data.compoundNameFromFormula.getName();
 
+    if (domSelectors.includeMolecular.checked == true) {
+        answer = data.molecFormulaFromName.getPlainFormula();
+    } 
+    
+
     domSelectors.displayNameFromFormulaAnswer.innerHTML = "";
     domSelectors.displayNameFromFormulaAnswer.append(answer);
 

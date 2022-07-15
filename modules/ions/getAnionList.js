@@ -34,11 +34,6 @@ const getAnionList = (displayType, isDropdownList) => {
         }
     }
     
-
-    
-    
-
-    
     if (isDropdownList == true) {
         domSelectors.anionDropdown.innerHTML = "";
         let option = document.createElement('option');

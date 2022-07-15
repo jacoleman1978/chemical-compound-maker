@@ -6,7 +6,6 @@ import Compound from "./compound.js";
 const randomCompound = (compoundType) => {
     let cation = randomIon('cation');
     let anion = randomIon('anion');
-
     
     if (compoundType == 'symbol') {
         data.compoundFromSymbols = new Compound(cation, anion);
@@ -19,7 +18,7 @@ const randomCompound = (compoundType) => {
         data.compoundFormulaFromName = new Compound(cation, anion);
         let name = data.compoundFormulaFromName.getName();
         domSelectors.formulaFromName.append(name);
-    }
+    } 
 }
 
 export default randomCompound;

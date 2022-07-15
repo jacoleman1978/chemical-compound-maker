@@ -26,13 +26,13 @@ export default class MolecularCompound {
     }
 
     getPlainFormula() {
-        let formula = this.firstElement;
+        let formula = this.firstElement.getSymbol();
 
         if (this.firstSubscript > 1) {
             formula += `/${this.firstSubscript}`;
         }
 
-        formula += ` ${this.secondElement}`;
+        formula += `${this.secondElement.getSymbol()}`;
 
         if (this.secondSubscript > 1) {
             formula +=`/${this.secondSubscript}`
@@ -44,7 +44,7 @@ export default class MolecularCompound {
     displayFormula(htmlId) {
         let formula = document.querySelector(htmlId);
 
-        formula.append(this.firstElement);
+        formula.append(this.firstElement.getSymbol());
 
         if (this.firstSubscript > 1) {
             let subscript = document.createElement('sub');
@@ -52,7 +52,7 @@ export default class MolecularCompound {
             formula.append(subscript);
         }
 
-        formula.append(this.secondElement);
+        formula.append(this.secondElement.getSymbol());
 
         if (this.secondSubscript > 1) {
             let subscript = document.createElement('sub');

@@ -1,4 +1,4 @@
-export default class MolecularComponent {
+export default class MolecularElement {
     constructor(elementName, ionName, symbol, priority) {
         this.elementName = elementName;
         this.ionName = ionName;
