@@ -5,3 +5,4 @@ import "./compoundName.js";
 import "./compoundNameFromFormula.js";
 import "./compoundFormulaFromName.js";
 import "./compoundPlayground.js";
+import "./formulaBoxCompoundFromSymbols.js";

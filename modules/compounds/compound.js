@@ -87,10 +87,15 @@ export default class Compound {
         }
     }
 
-    displayFormula(htmlId) {
+    displayFormula(htmlId = "") {
         this.findSubscripts();
+        let formula = ""
 
-        let formula = document.querySelector(htmlId);
+        if (htmlId == "") {
+            formula = document.createElement('div');
+        } else {
+            formula = document.querySelector(htmlId);
+        }
 
         if (this.cationSubscript > 1 && this.catIsPoly) {
             formula.append('(');
@@ -139,6 +144,8 @@ export default class Compound {
             anionSubElement.innerHTML = this.anionSubscript;
             formula.append(anionSubElement);
         }
+
+        return formula
     }
 
     displayName(htmlId) {

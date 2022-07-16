@@ -9,7 +9,7 @@ const resetNameCompound = () => {
     domSelectors.nameCompoundAnswer.value = "";
     domSelectors.displayFormulaCompoundAnswer.innerHTML = "";
     domSelectors.formulaCompoundAnswer.style.backgroundColor = "";
-    domSelectors.formulaCompoundAnswer.value = "";
+    domSelectors.formulaCompoundAnswer.innerHTML = "";
     randomCompound('symbol');
 }
 
