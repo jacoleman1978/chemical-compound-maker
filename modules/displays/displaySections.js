@@ -23,6 +23,7 @@ const displaySections = (compoundType) => {
         resetFormulaFromName();
 
     } else if (compoundType == 'acids') {
+        domSelectors.ionicTypesDisplay.style.display = 'block';
         domSelectors.transitionMetalDisplay.style.display = 'none';
         domSelectors.nameIonDisplay.style.display = 'none';
         domSelectors.formulaIonDisplay.style.display = 'none';

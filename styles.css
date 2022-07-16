@@ -120,3 +120,11 @@ button {
 .input-width {
     width: 10rem;
 }
+
+#practice-edit-area {
+    height: 5rem;
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: antiquewhite;
+}
