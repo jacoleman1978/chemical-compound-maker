@@ -21,7 +21,7 @@ const main = () => {
                 subscript.textContent = lastChar;
                 editableArea.append(subscript);
 
-            } else if ((/[a-zA-Z]/).test(lastChar)) {
+            } else if ((/[a-zA-Z]/).test(lastChar) == true) {
                 editableArea.append(lastChar);
 
                 let validate = editableArea.innerHTML;
@@ -31,14 +31,16 @@ const main = () => {
                     newFormula += validate.slice(0, subPosition + 6);
                     validate = validate.slice(subPosition + 6, validate.length);
 
-                    if (validate[0] != "<") {
+                    console.log((/[a-zA-Z]/).test(validate[0]))
+                    if ((/[a-zA-Z]/).test(validate[0]) == true) {
                         newFormula += validate.slice(1, 7);
                         validate = validate.slice(7, validate.length);
-
-                        if (validate.search("<sub>") == -1) {
-                            newFormula += validate;
-                        }
                     }
+
+                    if (validate.search("<sub>") == -1) {
+                        newFormula += validate;
+                    }
+
                     editableArea.innerHTML = newFormula;
                     subPosition = validate.search("<sub>");
                 }

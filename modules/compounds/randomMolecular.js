@@ -30,17 +30,7 @@ const randomMolecular = (molecularType) => {
     let thirdRandom = Math.random();
 
     if (firstPriority > 10) {
-        if (secondRandom > 0.97) {
-            secondSubscript = 10;
-
-            if (thirdRandom > 0.8) {
-                firstSubscript = 5;
-            } else if (thirdRandom > 0.2) {
-                firstSubscript = 4;
-            } else {
-                firstSubscript = 3;
-            }
-        } else if (secondRandom > 0.94) {
+        if (secondRandom > 0.94) {
             secondSubscript = 9;
 
             if (thirdRandom > 0.7) {
