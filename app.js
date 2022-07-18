@@ -7,9 +7,6 @@ import randomMolecular from "./modules/compounds/randomMolecular.js";
 
 
 const main = () => {
-
-
-
     data.nameTheIon = randomIon('both');
     domSelectors.ionSymbol.append(data.nameTheIon.getFormattedIon());
 

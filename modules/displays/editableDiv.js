@@ -5,15 +5,12 @@ const editableDiv = (event, htmlId) => {
     let formula = editableArea.innerHTML;
     let newFormula = '';
     let lastChar = event.key;
-    console.log(htmlId)
-    console.log(formula)
-    console.log(lastChar)
 
     if (lastChar.length <= 1) {
         editableArea.innerHTML = formula.slice(0, -1);
 
         if (data.superscriptFlag == true) {
-            data.superscriptFlag == false;
+            data.superscriptFlag = false;
 
             if (formula.length == 1 && (Number.isInteger(parseInt(lastChar)) == true)) {
                 editableArea.append(lastChar);
