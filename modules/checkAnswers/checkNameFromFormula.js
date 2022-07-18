@@ -12,7 +12,7 @@ const checkNameFromFormula = () => {
     domSelectors.displayNameFromFormulaAnswer.innerHTML = "";
     domSelectors.displayNameFromFormulaAnswer.append(answer);
 
-    let userAnswer = domSelectors.nameFromFormulaAnswer.value.trim();
+    let userAnswer = domSelectors.nameFromFormulaAnswer.value.trim().toLowerCase();
 
     if (userAnswer === answer) {
         domSelectors.nameFromFormulaAnswer.style.backgroundColor = 'lightgreen';

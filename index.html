@@ -76,9 +76,12 @@
             </div>
             <div class="ion-display">
                 <div id="ion-name"></div>
-                <div>
-                    <input type="text" id="formula-ion-answer" placeholder="Formula of the Ion" autocomplete="off"/>
-                    <div id="display-formula-ion-answer"></div>
+                <div class="flex-display">
+                    <label for="formula-ion-answer">Formula:</label>
+                    <div class="add-left-margin">
+                        <div contenteditable="true" id="formula-ion-answer" class="editable"></div>
+                        <div id="display-formula-ion-answer"></div>
+                    </div>
                 </div>
                 <div class="flex-start">
                     <button id="check-ion-formula">Check Answer</button>
@@ -101,9 +104,12 @@
                 <input type="text" id="name-compound-answer" placeholder="Name of the Compound" autocomplete="off" class="input-width"/>
                 <div id="display-name-compound-answer"></div>
             </div>
-            <div>
-                <div contenteditable="true" id="formula-compound-answer" class="editable"></div>
-                <div id="display-formula-compound-answer"></div>
+            <div class="flex-display">
+                <label for="formula-compound-answer">Formula:</label>
+                <div class="add-left-margin">
+                    <div contenteditable="true" id="formula-compound-answer" class="editable"></div>
+                    <div id="display-formula-compound-answer"></div>
+                </div>
             </div>
             <div class="flex-start">
                 <button id="check-compound-from-symbols-btn">Check Answer</button>
@@ -138,9 +144,12 @@
             </div>
             <div class="ion-display">
                 <div id="formula-from-name"></div>
-                <div>
-                    <input type="text" id="formula-from-name-answer" placeholder="Formula of the Compound" autocomplete="off" class="input-width"/>
-                    <div id="display-formula-from-name-answer"></div>
+                <div class="flex-display">
+                    <label for="formula-from-name-answer">Formula:</label>
+                    <div class="add-left-margin">
+                        <div contenteditable="true" id="formula-from-name-answer" class="editable"></div>
+                        <div id="display-formula-from-name-answer"></div>
+                    </div>
                 </div>
                 <div class="flex-start">
                     <button id="check-formula-from-name-btn">Check Answer</button>
@@ -148,7 +157,6 @@
             </div>
         </form>
     </div>
-    
     <form id="compound-formula-playground" class="practice-forms ionic-only">
         <h2>Compound Formula Playground</h2>
         <div class="flex-around-start">
@@ -162,9 +170,12 @@
                     <div id="anion-display" class="flex-center"></div>
                 </div>
             </div>
-            <div id="formula-answer-box">
-                <input type="text" id="formula-answer" placeholder="Formula of the Compound" autocomplete="off" class="input-width"/>
-                <div id="display-formula"></div>
+            <div class="flex-display">
+                <label for="formula-from-name-answer">Formula:</label>
+                <div class="add-left-margin">
+                    <div contenteditable="true" id="formula-answer" class="editable"></div>
+                    <div id="display-formula"></div>
+                </div>
             </div>
             <div class="flex-start">
                 <button id="display-formula-btn">Check Answer</button>

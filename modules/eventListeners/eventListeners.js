@@ -6,3 +6,6 @@ import "./compoundNameFromFormula.js";
 import "./compoundFormulaFromName.js";
 import "./compoundPlayground.js";
 import "./formulaBoxCompoundFromSymbols.js";
+import "./formulaBoxFromName.js";
+import "./formulaBoxFromPlayground.js";
+import "./formulaBoxFromIon.js"

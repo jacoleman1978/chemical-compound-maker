@@ -3,7 +3,7 @@ import domSelectors from "../eventListeners/domSelectors.js";
 
 const checkIonName = () => {
     let answer = data.nameTheIon.getName();
-    let userAnswer = domSelectors.nameIonAnswer.value.trim();
+    let userAnswer = domSelectors.nameIonAnswer.value.trim().toLowerCase();
     domSelectors.displayNameIonAnswer.innerHTML = "";
     domSelectors.displayNameIonAnswer.append(answer);
 

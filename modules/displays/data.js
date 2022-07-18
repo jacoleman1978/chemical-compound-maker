@@ -22,7 +22,8 @@ const data = {
     molecFirstElements: molecFirstElementsOptions,
     molecSecondElements: molecSecondElementsOptions,
     molecFormulaFromName: "",
-    molecNameFromFormula: ""
+    molecNameFromFormula: "",
+    superscriptFlag: false,
 }
 
 export default data;

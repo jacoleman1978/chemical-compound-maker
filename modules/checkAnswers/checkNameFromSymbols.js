@@ -7,7 +7,7 @@ const checkNameFromSymbols = () => {
     domSelectors.displayNameCompoundAnswer.innerHTML = "";
     domSelectors.displayNameCompoundAnswer.append(answer);
 
-    let userAnswer = domSelectors.nameCompoundAnswer.value.trim();
+    let userAnswer = domSelectors.nameCompoundAnswer.value.trim().toLowerCase();
 
     if (userAnswer === answer) {
         domSelectors.nameCompoundAnswer.style.backgroundColor = 'lightgreen';

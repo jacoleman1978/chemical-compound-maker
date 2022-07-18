@@ -5,6 +5,7 @@ import randomMolecular from "../compounds/randomMolecular.js";
 const resetFormulaFromName = () => {
     domSelectors.formulaFromName.innerHTML = "";
     domSelectors.displayFormulaFromNameAnswer.innerHTML = "";
+    domSelectors.formulaFromNameAnswer.innerHTML = "";
     domSelectors.formulaFromNameAnswer.style.backgroundColor = "";
     domSelectors.formulaFromNameAnswer.value = "";
 
