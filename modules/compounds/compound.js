@@ -1,7 +1,7 @@
 import domSelectors from "../eventListeners/domSelectors.js";
 
 export default class Compound {
-    constructor(cation, anion) {
+    constructor(cation, anion, displayAnswerSelector, userAnswerSelector) {
         this.cation = cation;
         this.catSymbol = cation.getSymbol();
         this.catCharge = cation.getCharge();
@@ -17,6 +17,8 @@ export default class Compound {
         this.anionSubscript = 1;
         this.anIsPoly = anion.isPoly();
         this.formula = '';
+        this.displayAnswerSelector = displayAnswerSelector;
+        this.userAnswerSelector = userAnswerSelector;
     }
 
     getCationObject() {
@@ -153,74 +155,94 @@ export default class Compound {
         name.append(this.getName());
     }
 
-    getPlainFormula() {
-        this.findSubscripts();
+    checkCompoundFormula() {
+        // Display the answer to the user
+        this.displayAnswerSelector.innerHTML = "";
+        this.displayAnswerSelector.append(this.displayFormula(""));
 
-        let plainFormula = "";
+        // Get the user's formula from the input
+        let userAnswer = this.userAnswerSelector.innerHTML;
 
-        if (this.catIsPoly == true && this.cationSubscript > 1) {
-            plainFormula += '(';
+        //Check the user's answer and change styles based on correctness
+        if (userAnswer == this.displayFormula("").innerHTML) {
+            this.userAnswerSelector.style.backgroundColor = 'lightgreen';
+            this.displayAnswerSelector.style.color = 'green';
+        } else {
+            this.userAnswerSelector.style.backgroundColor = 'yellow';
+            this.displayAnswerSelector.style.color = 'red';
         }
-
-        for (let char of this.catSymbol) {
-            if (Number.isInteger(parseInt(char)) == false) {
-                plainFormula += char;
-            } else {
-                plainFormula += `/${char}`
-            }
-        }
-
-        if (this.catIsPoly == true && this.cationSubscript > 1) {
-            plainFormula += ')';
-        }
-
-        if (this.cationSubscript > 1) {
-            plainFormula += `/${this.cationSubscript}`;
-        }
-
-        if (this.anIsPoly == true && this.anionSubscript > 1) {
-            plainFormula += '(';
-        }
-
-        for (let char of this.anSymbol) {
-            if (Number.isInteger(parseInt(char)) == false) {
-                plainFormula += char;
-            } else {
-                plainFormula += `/${char}`
-            }
-        }
-
-        if (this.anIsPoly == true && this.anionSubscript > 1) {
-            plainFormula += ')';
-        }
-
-        if (this.anionSubscript > 1) {
-            plainFormula += `/${this.anionSubscript}`;
-        }
-
-        return plainFormula
     }
 
-    polyIonConversion() {
-        let ionDiv = document.createElement('div');
+    // getPlainFormula() {
+    //     this.findSubscripts();
 
-        if (isPoly == true) {
-            ionDiv.append('(');
-        }
+    //     let plainFormula = "";
 
-        for (let char of symbol) {
-            if (Number.isInteger(parseInt(char)) == false) {
-                ionDiv.append(char);
-            } else {
-                let subscript = document.createElement('sub');
-                subscript.textContent = char;
-                ionDiv.append(subscript)
-            }
-        }
-         if (isPoly == true) {
-            ionDiv.append(')');
-         }
+    //     if (this.catIsPoly == true && this.cationSubscript > 1) {
+    //         plainFormula += '(';
+    //     }
 
-        return ionDiv
-    }
+    //     for (let char of this.catSymbol) {
+    //         if (Number.isInteger(parseInt(char)) == false) {
+    //             plainFormula += char;
+    //         } else {
+    //             plainFormula += `/${char}`
+    //         }
+    //     }
+
+    //     if (this.catIsPoly == true && this.cationSubscript > 1) {
+    //         plainFormula += ')';
+    //     }
+
+    //     if (this.cationSubscript > 1) {
+    //         plainFormula += `/${this.cationSubscript}`;
+    //     }
+
+    //     if (this.anIsPoly == true && this.anionSubscript > 1) {
+    //         plainFormula += '(';
+    //     }
+
+    //     for (let char of this.anSymbol) {
+    //         if (Number.isInteger(parseInt(char)) == false) {
+    //             plainFormula += char;
+    //         } else {
+    //             plainFormula += `/${char}`
+    //         }
+    //     }
+
+    //     if (this.anIsPoly == true && this.anionSubscript > 1) {
+    //         plainFormula += ')';
+    //     }
+
+    //     if (this.anionSubscript > 1) {
+    //         plainFormula += `/${this.anionSubscript}`;
+    //     }
+
+    //     return plainFormula
+    // }
+
+    
+
+    // polyIonConversion() {
+    //     let ionDiv = document.createElement('div');
+
+    //     if (isPoly == true) {
+    //         ionDiv.append('(');
+    //     }
+
+    //     for (let char of symbol) {
+    //         if (Number.isInteger(parseInt(char)) == false) {
+    //             ionDiv.append(char);
+    //         } else {
+    //             let subscript = document.createElement('sub');
+    //             subscript.textContent = char;
+    //             ionDiv.append(subscript)
+    //         }
+    //     }
+    //      if (isPoly == true) {
+    //         ionDiv.append(')');
+    //      }
+
+    //     return ionDiv
+    // }
 }

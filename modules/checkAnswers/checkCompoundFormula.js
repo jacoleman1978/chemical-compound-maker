@@ -9,10 +9,10 @@ const checkCompoundFormula = (answer, answerSelector, userAnswerSelector) => {
     //Check the user's answer and change styles based on correctness
     if (userAnswer == answer.innerHTML) {
         userAnswerSelector.style.backgroundColor = 'lightgreen';
-        userAnswerSelector.style.color = 'green';
+        answerSelector.style.color = 'green';
     } else {
         userAnswerSelector.style.backgroundColor = 'yellow';
-        userAnswerSelector.style.color = 'red';
+        answerSelector.style.color = 'red';
     }
 }
 

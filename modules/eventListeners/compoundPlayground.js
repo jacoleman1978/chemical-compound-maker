@@ -28,5 +28,6 @@ domSelectors.displayPlaygroundFormulaBtn.addEventListener('click', (e) => {
 
     makeCompound('name');
 
-    checkCompoundFormula(data.playgroundCompound.displayFormula(""), domSelectors.displayPlaygroundFormula, domSelectors.playgroundFormulaAnswer);
+    //checkCompoundFormula(data.playgroundCompound.displayFormula(""), domSelectors.displayPlaygroundFormula, domSelectors.playgroundFormulaAnswer);
+    data.playgroundCompound.checkCompoundFormula();
 })

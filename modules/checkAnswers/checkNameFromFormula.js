@@ -8,7 +8,6 @@ const checkNameFromFormula = () => {
         answer = data.molecFormulaFromName.getPlainFormula();
     } 
     
-
     domSelectors.displayNameFromFormulaAnswer.innerHTML = "";
     domSelectors.displayNameFromFormulaAnswer.append(answer);
 

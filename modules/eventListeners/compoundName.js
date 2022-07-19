@@ -15,5 +15,6 @@ domSelectors.checkCompoundFromSymbolsBtn.addEventListener('click', (e) => {
     domSelectors.nameCompoundAnswer.innerHTML = "";
 
     checkNameFromSymbols();
-    checkCompoundFormula(data.compoundFromSymbols.displayFormula(""), domSelectors.displayFormulaCompoundAnswer, domSelectors.formulaCompoundAnswer);
+    //checkCompoundFormula(data.compoundFromSymbols.displayFormula(""), domSelectors.displayFormulaCompoundAnswer, domSelectors.formulaCompoundAnswer);
+    data.compoundFromSymbols.checkCompoundFormula();
 })

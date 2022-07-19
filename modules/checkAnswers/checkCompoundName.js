@@ -13,4 +13,5 @@ const checkCompoundName = () => {
     }
 }
 
+
 export default checkCompoundName;

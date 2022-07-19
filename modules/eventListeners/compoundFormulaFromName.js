@@ -11,5 +11,6 @@ domSelectors.newFormulaFromNameBtn.addEventListener('click', (e) => {
 
 domSelectors.checkFormulaFromNameBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    checkCompoundFormula(data.compoundFormulaFromName.displayFormula(""), domSelectors.displayFormulaFromNameAnswer, domSelectors.formulaFromNameAnswer);
+    //checkCompoundFormula(data.compoundFormulaFromName.displayFormula(""), domSelectors.displayFormulaFromNameAnswer, domSelectors.formulaFromNameAnswer);
+    data.compoundFormulaFromName.checkCompoundFormula();
 })
