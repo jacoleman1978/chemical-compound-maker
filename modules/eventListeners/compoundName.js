@@ -1,7 +1,8 @@
+import data from "../displays/data.js";
 import domSelectors from "./domSelectors.js";
 import resetNameCompound from "../resetSection/resetNameCompound.js";
 import checkNameFromSymbols from "../checkAnswers/checkNameFromSymbols.js";
-import checkFormulaFromSymbols from "../checkAnswers/checkFormulaFromSymbols.js";
+import checkCompoundFormula from "../checkAnswers/checkCompoundFormula.js"
 
 
 domSelectors.newCompoundFormulaBtn.addEventListener('click', (e) => {
@@ -12,7 +13,7 @@ domSelectors.newCompoundFormulaBtn.addEventListener('click', (e) => {
 domSelectors.checkCompoundFromSymbolsBtn.addEventListener('click', (e) => {
     e.preventDefault();
     domSelectors.nameCompoundAnswer.innerHTML = "";
-    //domSelectors.formulaCompoundAnswer.innerHTML = "";
+
     checkNameFromSymbols();
-    checkFormulaFromSymbols();
+    checkCompoundFormula(data.compoundFromSymbols.displayFormula(""), domSelectors.displayFormulaCompoundAnswer, domSelectors.formulaCompoundAnswer);
 })

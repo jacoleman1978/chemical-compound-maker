@@ -1,21 +1,18 @@
-import data from "../displays/data.js";
-import domSelectors from "../eventListeners/domSelectors.js";
+const checkCompoundFormula = (answer, answerSelector, userAnswerSelector) => {
+    // Display the answer to the user
+    answerSelector.innerHTML = "";
+    answerSelector.append(answer);
 
-const checkCompoundFormula = () => {
-    //let userAnswer = domSelectors.formulaAnswer.value.trim();
-    let answer = data.playgroundCompound.displayFormula("");
+    // Get the user's formula from the input
+    let userAnswer = userAnswerSelector.innerHTML;
 
-    domSelectors.displayFormula.innerHTML = "";
-    domSelectors.displayFormula.append(answer);
-
-    let userAnswer = domSelectors.formulaAnswer.innerHTML;
-
-    if (userAnswer === answer.innerHTML) {
-        domSelectors.formulaAnswer.style.backgroundColor = 'lightgreen';
-        domSelectors.displayFormula.style.color = 'green';
+    //Check the user's answer and change styles based on correctness
+    if (userAnswer == answer.innerHTML) {
+        userAnswerSelector.style.backgroundColor = 'lightgreen';
+        userAnswerSelector.style.color = 'green';
     } else {
-        domSelectors.formulaAnswer.style.backgroundColor = 'yellow';
-        domSelectors.displayFormula.style.color = 'red';
+        userAnswerSelector.style.backgroundColor = 'yellow';
+        userAnswerSelector.style.color = 'red';
     }
 }
 

@@ -19,9 +19,9 @@ const domSelectors = {
     cationDisplay: document.querySelector('#cation-display'),
     anionDisplay: document.querySelector('#anion-display'),
 
-    formulaAnswer: document.querySelector('#formula-answer'),
-    displayFormulaBtn: document.querySelector('#display-formula-btn'),
-    displayFormula: document.querySelector('#display-formula'),
+    playgroundFormulaAnswer: document.querySelector('#playground-formula-answer'),
+    displayPlaygroundFormulaBtn: document.querySelector('#display-playground-formula-btn'),
+    displayPlaygroundFormula: document.querySelector('#display-playground-formula'),
 
     newCationSymbol: document.querySelector('#new-cation-symbol'),
     newAnionSymbol: document.querySelector('#new-anion-symbol'),

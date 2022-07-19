@@ -1,7 +1,7 @@
+import data from "../displays/data.js";
 import domSelectors from "./domSelectors.js";
 import resetFormulaFromName from "../resetSection/resetFormulaFromName.js";
-import checkFormulaFromName from "../checkAnswers/checkFormulaFromName.js";
-import editableDiv from "../displays/editableDiv.js";
+import checkCompoundFormula from "../checkAnswers/checkCompoundFormula.js";
 
 
 domSelectors.newFormulaFromNameBtn.addEventListener('click', (e) => {
@@ -11,5 +11,5 @@ domSelectors.newFormulaFromNameBtn.addEventListener('click', (e) => {
 
 domSelectors.checkFormulaFromNameBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    checkFormulaFromName();
+    checkCompoundFormula(data.compoundFormulaFromName.displayFormula(""), domSelectors.displayFormulaFromNameAnswer, domSelectors.formulaFromNameAnswer);
 })

@@ -2,7 +2,7 @@ import domSelectors from "../eventListeners/domSelectors.js";
 import data from "../displays/data.js";
 import resetCompoundPlayground from "../resetSection/resetCompoundPlayground.js";
 import makeCompound from "../compounds/makeCompound.js";
-import checkCompoundFormula from "../checkAnswers/checkCompoundFormula.js";
+import checkCompoundFormula from "../checkAnswers/checkCompoundFormula.js"
 
 domSelectors.cationDropdown.addEventListener("change", (e) => {
     domSelectors.cationDisplay.innerHTML = "";
@@ -22,11 +22,11 @@ domSelectors.anionDropdown.addEventListener("change", (e) => {
     domSelectors.anionDisplay.append(formattedIon);
 });
 
-domSelectors.displayFormulaBtn.addEventListener('click', (e) => {
+domSelectors.displayPlaygroundFormulaBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    domSelectors.displayFormula.innerHTML = "";
+    domSelectors.displayPlaygroundFormula.innerHTML = "";
 
     makeCompound('name');
 
-    checkCompoundFormula();
+    checkCompoundFormula(data.playgroundCompound.displayFormula(""), domSelectors.displayPlaygroundFormula, domSelectors.playgroundFormulaAnswer);
 })
