@@ -61,9 +61,21 @@ const editableDiv = (event, htmlId) => {
             // If the last character is a '+' or '-', create a <sup> element with the charge inside
             // Set the superscriptFlag
             if ((/[\+\-]/).test(lastChar) == true) {
+                // If there is also a subscript validate the subscript for chemical formulas
+                let validate = editableArea.innerHTML;
+                let subPosition = validate.search('</sub>')
+
+                if (subPosition != -1) {
+                    newFormula = validate.slice(0, subPosition - 1);
+                    newFormula += validate.slice(subPosition);
+                    editableArea.innerHTML = newFormula;
+                }
+                
+
                 let superscript = document.createElement('sup');
                 superscript.textContent = lastChar;
-                editableArea.append(superscript);
+                editableArea.append(superscript)
+
                 data.superscriptFlag = true;
 
             // If the lastChar is a number, create a <sub> element with the number inside

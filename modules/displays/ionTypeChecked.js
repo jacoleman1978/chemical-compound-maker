@@ -7,6 +7,7 @@ import resetNameIon from "../resetSection/resetNameIon.js";
 import resetFormulaIon from "../resetSection/resetFormulaIon.js";
 import domSelectors from "../eventListeners/domSelectors.js";
 import resetNameCompound from "../resetSection/resetNameCompound.js";
+import resetCompoundPlayground from "../resetSection/resetCompoundPlayground.js";
 
 const ionTypeChecked = (event) => {
     let isMGIonsChecked = domSelectors.mgIons.checked;
@@ -25,6 +26,9 @@ const ionTypeChecked = (event) => {
         resetNameIon('both');
         resetFormulaIon('both');
         resetNameCompound();
+        resetCompoundPlayground();
+        domSelectors.cationDisplay.innerHTML = '';
+        domSelectors.anionDisplay.innerHTML = '';
 
     // At least one of the boxes must be checked
     } else {

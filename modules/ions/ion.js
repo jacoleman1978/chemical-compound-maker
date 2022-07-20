@@ -87,8 +87,8 @@ export default class Ion {
         this.nameDisplayAnswerSelector.innerHTML = "";
         this.nameDisplayAnswerSelector.append(answer);
 
-        // Remove whitespace and convert input ion name to lower case
-        let userAnswer = this.nameUserAnswerSelector.value.trim().toLowerCase();
+        // Remove whitespace
+        let userAnswer = this.nameUserAnswerSelector.value.trim();
 
         // Check the user's answer and change styles based on correctness
         if (userAnswer === answer) {
