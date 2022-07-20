@@ -12,9 +12,10 @@ domSelectors.newCompoundFormulaBtn.addEventListener('click', (e) => {
 
 domSelectors.checkCompoundFromSymbolsBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    domSelectors.nameCompoundAnswer.innerHTML = "";
+    //domSelectors.nameCompoundAnswer.innerHTML = "";
 
-    checkNameFromSymbols();
+    //checkNameFromSymbols();
+    data.compoundFromSymbols.checkCompoundName();
     //checkCompoundFormula(data.compoundFromSymbols.displayFormula(""), domSelectors.displayFormulaCompoundAnswer, domSelectors.formulaCompoundAnswer);
     data.compoundFromSymbols.checkCompoundFormula();
 })

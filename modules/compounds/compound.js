@@ -1,7 +1,7 @@
 import domSelectors from "../eventListeners/domSelectors.js";
 
 export default class Compound {
-    constructor(cation, anion, displayAnswerSelector, userAnswerSelector) {
+    constructor(cation, anion, formulaDisplayAnswerSelector, formulaUserAnswerSelector, nameDisplayAnswerSelector, nameUserAnswerSelector) {
         this.cation = cation;
         this.catSymbol = cation.getSymbol();
         this.catCharge = cation.getCharge();
@@ -17,8 +17,10 @@ export default class Compound {
         this.anionSubscript = 1;
         this.anIsPoly = anion.isPoly();
         this.formula = '';
-        this.displayAnswerSelector = displayAnswerSelector;
-        this.userAnswerSelector = userAnswerSelector;
+        this.formulaDisplayAnswerSelector = formulaDisplayAnswerSelector;
+        this.formulaUserAnswerSelector = formulaUserAnswerSelector;
+        this.nameDisplayAnswerSelector = nameDisplayAnswerSelector;
+        this.nameUserAnswerSelector = nameUserAnswerSelector;
     }
 
     getCationObject() {
@@ -157,19 +159,45 @@ export default class Compound {
 
     checkCompoundFormula() {
         // Display the answer to the user
-        this.displayAnswerSelector.innerHTML = "";
-        this.displayAnswerSelector.append(this.displayFormula(""));
+        this.formulaDisplayAnswerSelector.innerHTML = "";
+        this.formulaDisplayAnswerSelector.append(this.displayFormula(""));
 
         // Get the user's formula from the input
-        let userAnswer = this.userAnswerSelector.innerHTML;
+        let userAnswer = this.formulaUserAnswerSelector.innerHTML;
 
         //Check the user's answer and change styles based on correctness
         if (userAnswer == this.displayFormula("").innerHTML) {
-            this.userAnswerSelector.style.backgroundColor = 'lightgreen';
-            this.displayAnswerSelector.style.color = 'green';
+            this.formulaUserAnswerSelector.style.backgroundColor = 'lightgreen';
+            this.formulaDisplayAnswerSelector.style.color = 'green';
         } else {
-            this.userAnswerSelector.style.backgroundColor = 'yellow';
-            this.displayAnswerSelector.style.color = 'red';
+            this.formulaUserAnswerSelector.style.backgroundColor = 'yellow';
+            this.formulaDisplayAnswerSelector.style.color = 'red';
+        }
+    }
+
+    checkCompoundName() {
+        // Generate the name of the compound
+        let answer = this.getName();
+        
+        // // If the compound is molecular, generate the name of the compound using those rules
+        // if (domSelectors.includeMolecular.checked == true) {
+        //     answer = data.molecFormulaFromName.getPlainFormula();
+        // } 
+
+        // Display the answer to the user
+        this.nameDisplayAnswerSelector.innerHTML = "";
+        this.nameDisplayAnswerSelector.append(answer);
+
+        // Remove whitespace and convert input compound name to lower case
+        let userAnswer = this.nameUserAnswerSelector.value.trim().toLowerCase();
+
+        // Check the user's answer and change styles based on correctness
+        if (userAnswer === answer) {
+            this.nameUserAnswerSelector.style.backgroundColor = 'lightgreen';
+            this.nameDisplayAnswerSelector.style.color = 'green';
+        } else {
+            this.nameUserAnswerSelector.style.backgroundColor = 'yellow';
+            this.nameDisplayAnswerSelector.style.color = 'red';
         }
     }
 

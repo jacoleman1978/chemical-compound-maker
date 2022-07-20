@@ -133,14 +133,13 @@ const randomMolecular = (molecularType) => {
         }
     }
 
-    if (molecularType == 'name') {
+    if (molecularType == 'formula') {
         data.molecFormulaFromName = new MolecularCompound(firstElement, firstSubscript, secondElement, secondSubscript);
-        data.molecFormulaFromName.displayName('#name-from-formula');
+        data.molecFormulaFromName.displayName('#formula-from-name');
 
-
-    } else if (molecularType == 'formula') {
+    } else if (molecularType == 'name') {
         data.molecNameFromFormula = new MolecularCompound(firstElement, firstSubscript, secondElement, secondSubscript);
-        data.molecNameFromFormula.displayFormula('#formula-from-name');
+        data.molecNameFromFormula.displayFormula('#name-from-formula');
     }
 
 }

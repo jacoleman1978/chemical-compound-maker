@@ -1,6 +1,7 @@
 import domSelectors from "../eventListeners/domSelectors.js";
 import resetNameIon from "../resetSection/resetNameIon.js";
 import checkIonName from "../checkAnswers/checkIonName.js";
+import data from "../displays/data.js";
 
 domSelectors.newCationSymbol.addEventListener('click', (e) => {
     e.preventDefault();
@@ -19,6 +20,7 @@ domSelectors.newRandomIonSymbol.addEventListener('click', (e) => {
 
 domSelectors.checkIonNameBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    domSelectors.nameIonAnswer.innerHTML = "";
-    checkIonName();
+    //domSelectors.nameIonAnswer.innerHTML = "";
+    //checkIonName();
+    data.nameTheIon.checkIonName();
 })

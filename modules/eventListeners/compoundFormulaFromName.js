@@ -6,11 +6,16 @@ import checkCompoundFormula from "../checkAnswers/checkCompoundFormula.js";
 
 domSelectors.newFormulaFromNameBtn.addEventListener('click', (e) => {
     e.preventDefault();
+
     resetFormulaFromName();
 })
 
 domSelectors.checkFormulaFromNameBtn.addEventListener('click', (e) => {
     e.preventDefault();
     //checkCompoundFormula(data.compoundFormulaFromName.displayFormula(""), domSelectors.displayFormulaFromNameAnswer, domSelectors.formulaFromNameAnswer);
-    data.compoundFormulaFromName.checkCompoundFormula();
+    if (domSelectors.includeMolecular.checked == true) {
+        data.molecFormulaFromName.checkCompoundFormula();
+    } else {
+        data.compoundFormulaFromName.checkCompoundFormula();
+    }
 })
