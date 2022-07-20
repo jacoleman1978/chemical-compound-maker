@@ -95,20 +95,4 @@ export default class Ion {
             this.nameDisplayAnswerSelector.style.color = 'red';
         }
     }
-
-    // getPlainFormula() {
-    //     if (this.isPolyatomic == true) {
-    //         let plainFormula = "";
-    //         for (let char of this.symbol) {
-    //             if (Number.isInteger(parseInt(char)) == false) {
-    //                 plainFormula += char;
-    //             } else {
-    //                 plainFormula += `/${char}`
-    //             }
-    //         }
-    //         return `${plainFormula}^${this.charge}`
-    //     } else {
-    //         return `${this.symbol}^${this.charge}`
-    //     }
-    // }
 }

@@ -1,3 +1,4 @@
+// Used to make individual objects of available elements for molecular compounds
 export default class MolecularElement {
     constructor(elementName, ionName, symbol, priority) {
         this.elementName = elementName;

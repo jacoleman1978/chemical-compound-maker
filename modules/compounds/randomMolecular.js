@@ -1,12 +1,13 @@
 import data from "../displays/data.js";
 import randomMolecElement from "./randomMolecElement.js";
 import MolecularCompound from "./molecularCompound.js";
-import domSelectors from "../eventListeners/domSelectors.js";
 
 const randomMolecular = (molecularType) => {
+    // Generate random elements from an object list for a molecular compound
     let firstElement = randomMolecElement('first');
     let secondElement = randomMolecElement('second');
 
+    // If the first and element are the same, keep picking until they are different
     while (firstElement.getSymbol() == secondElement.getSymbol()) {
         secondElement = randomMolecElement('second');
     }
@@ -14,6 +15,7 @@ const randomMolecular = (molecularType) => {
     let firstSubscript = 1;
     let secondSubscript = 1;
 
+    // Randomly pick the first subscript based on a weighted range
     let firstRandom = Math.random();
 
     if (firstRandom > 0.95) {
@@ -24,6 +26,7 @@ const randomMolecular = (molecularType) => {
         firstSubscript = 2;
     }
 
+    // Use the priorities from the element object to randomly generate the subscript of the second element, adjusting the first subscript as needed
     let firstPriority = firstElement.getPriority();
     let secondPriority = secondElement.getPriority();
     let secondRandom = Math.random();
@@ -133,10 +136,12 @@ const randomMolecular = (molecularType) => {
         }
     }
 
+    // Generate the molecular compound and store in the data object to be used with the 'Formula from Name' display
     if (molecularType == 'formula') {
         data.molecFormulaFromName = new MolecularCompound(firstElement, firstSubscript, secondElement, secondSubscript);
         data.molecFormulaFromName.displayName('#formula-from-name');
 
+    // Generate the molecular compound and store in the data object to be used with the 'Name from Formula' display
     } else if (molecularType == 'name') {
         data.molecNameFromFormula = new MolecularCompound(firstElement, firstSubscript, secondElement, secondSubscript);
         data.molecNameFromFormula.displayFormula('#name-from-formula');

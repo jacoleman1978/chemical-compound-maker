@@ -1,7 +1,6 @@
 import data from "../displays/data.js";
 import domSelectors from "./domSelectors.js";
 import resetFormulaFromName from "../resetSection/resetFormulaFromName.js";
-import checkCompoundFormula from "../checkAnswers/checkCompoundFormula.js";
 
 
 domSelectors.newFormulaFromNameBtn.addEventListener('click', (e) => {

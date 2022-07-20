@@ -2,7 +2,6 @@ import domSelectors from "../eventListeners/domSelectors.js";
 import data from "../displays/data.js";
 import resetCompoundPlayground from "../resetSection/resetCompoundPlayground.js";
 import makeCompound from "../compounds/makeCompound.js";
-import checkCompoundFormula from "../checkAnswers/checkCompoundFormula.js"
 
 domSelectors.cationDropdown.addEventListener("change", (e) => {
     domSelectors.cationDisplay.innerHTML = "";
@@ -26,7 +25,7 @@ domSelectors.displayPlaygroundFormulaBtn.addEventListener('click', (e) => {
     e.preventDefault();
     domSelectors.displayPlaygroundFormula.innerHTML = "";
 
-    makeCompound('name');
+    makeCompound();
 
     //checkCompoundFormula(data.playgroundCompound.displayFormula(""), domSelectors.displayPlaygroundFormula, domSelectors.playgroundFormulaAnswer);
     data.playgroundCompound.checkCompoundFormula();

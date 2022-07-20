@@ -32,6 +32,7 @@ export default class Compound {
     }
 
     getName() {
+        // If an acid, convert ion names to acid names
         if (domSelectors.includeAcids.checked == true) {
             let anionSuffix = this.anName.slice(-3);
             let anionRoot = this.anName.slice(0, -3);
@@ -60,15 +61,18 @@ export default class Compound {
     }
 
     findSubscripts() {
+        // Determine the max and min magnitudes of charges of cation and anion
         let catCharge = this.catChargeMagnitude;
         let anCharge = this.anChargeMagnitude;
         let min = Math.min(catCharge, anCharge);
         let max = Math.max(catCharge, anCharge);
 
+        // If the bigger charge is evenly divisiby by the smaller charge, the subscripts are one and a multiple of the smaller charge that equals the larger charge
         if (max % min == 0) {
             this.cationSubscript = max / catCharge;
             this.anionSubscript = max / anCharge;
 
+        // Increment the smaller charge by 1, continuing to do so until the tempMin and tempMax are equal. This finds the least common multiple.
         } else {
             let tempMin = min;
             let minCount = 1;
@@ -86,25 +90,30 @@ export default class Compound {
                 }
             }
 
+            // The subscripts are the tempMax (aka lowest common multiple) divided by the respective charges
             this.cationSubscript = tempMax / catCharge;
             this.anionSubscript = tempMax / anCharge;
         }
     }
 
     displayFormula(htmlId = "") {
+        // Run the find subscripts algorithm first
         this.findSubscripts();
         let formula = ""
 
+        // If an htmlId is given use that to select an eletment, otherwise create an empty div
         if (htmlId == "") {
             formula = document.createElement('div');
         } else {
             formula = document.querySelector(htmlId);
         }
 
+        // If the cation is polyatomic with a subscript greater than one, put the cation in parentheses
         if (this.cationSubscript > 1 && this.catIsPoly) {
             formula.append('(');
         }
 
+        // Go through each character of the cation...only applies to polyatomic cations, appending alpha characters or creating sub elements with numbers and appending
         for (let char of this.catSymbol) {
             if (Number.isInteger(parseInt(char)) == false) {
                 formula.append(char);
@@ -115,20 +124,24 @@ export default class Compound {
             }
         }
 
+        // Close parenthesis around cation if needed
         if (this.cationSubscript > 1 && this.catIsPoly) {
             formula.append(')');
         }
         
+        // Append a subscript for numbers greater than 1
         if (this.cationSubscript > 1) {
             let cationSubElement = document.createElement('sub');
             cationSubElement.innerHTML = this.cationSubscript;
             formula.append(cationSubElement);
         }
 
+        // If the anion is polyatomic with a subscript greater than one, put the anion in parentheses
         if (this.anionSubscript > 1 && this.anIsPoly == true) {
             formula.append('(');
         }
 
+        // Go through each character of the anion...only applies to polyatomic anions, appending alpha characters or creating sub elements with numbers and appending
         for (let char of this.anSymbol) {
             if (Number.isInteger(parseInt(char)) == false) {
                 formula.append(char);
@@ -139,10 +152,12 @@ export default class Compound {
             }
         }
 
+        // Close parenthesis around anion if needed
         if (this.anionSubscript > 1 && this.anIsPoly == true) {
             formula.append(')');
         }
 
+        // Append a subscript for numbers greater than 1
         if (this.anionSubscript > 1) {
             let anionSubElement = document.createElement('sub');
             anionSubElement.innerHTML = this.anionSubscript;
@@ -178,11 +193,6 @@ export default class Compound {
     checkCompoundName() {
         // Generate the name of the compound
         let answer = this.getName();
-        
-        // // If the compound is molecular, generate the name of the compound using those rules
-        // if (domSelectors.includeMolecular.checked == true) {
-        //     answer = data.molecFormulaFromName.getPlainFormula();
-        // } 
 
         // Display the answer to the user
         this.nameDisplayAnswerSelector.innerHTML = "";
@@ -200,77 +210,4 @@ export default class Compound {
             this.nameDisplayAnswerSelector.style.color = 'red';
         }
     }
-
-    // getPlainFormula() {
-    //     this.findSubscripts();
-
-    //     let plainFormula = "";
-
-    //     if (this.catIsPoly == true && this.cationSubscript > 1) {
-    //         plainFormula += '(';
-    //     }
-
-    //     for (let char of this.catSymbol) {
-    //         if (Number.isInteger(parseInt(char)) == false) {
-    //             plainFormula += char;
-    //         } else {
-    //             plainFormula += `/${char}`
-    //         }
-    //     }
-
-    //     if (this.catIsPoly == true && this.cationSubscript > 1) {
-    //         plainFormula += ')';
-    //     }
-
-    //     if (this.cationSubscript > 1) {
-    //         plainFormula += `/${this.cationSubscript}`;
-    //     }
-
-    //     if (this.anIsPoly == true && this.anionSubscript > 1) {
-    //         plainFormula += '(';
-    //     }
-
-    //     for (let char of this.anSymbol) {
-    //         if (Number.isInteger(parseInt(char)) == false) {
-    //             plainFormula += char;
-    //         } else {
-    //             plainFormula += `/${char}`
-    //         }
-    //     }
-
-    //     if (this.anIsPoly == true && this.anionSubscript > 1) {
-    //         plainFormula += ')';
-    //     }
-
-    //     if (this.anionSubscript > 1) {
-    //         plainFormula += `/${this.anionSubscript}`;
-    //     }
-
-    //     return plainFormula
-    // }
-
-    
-
-    // polyIonConversion() {
-    //     let ionDiv = document.createElement('div');
-
-    //     if (isPoly == true) {
-    //         ionDiv.append('(');
-    //     }
-
-    //     for (let char of symbol) {
-    //         if (Number.isInteger(parseInt(char)) == false) {
-    //             ionDiv.append(char);
-    //         } else {
-    //             let subscript = document.createElement('sub');
-    //             subscript.textContent = char;
-    //             ionDiv.append(subscript)
-    //         }
-    //     }
-    //      if (isPoly == true) {
-    //         ionDiv.append(')');
-    //      }
-
-    //     return ionDiv
-    // }
 }

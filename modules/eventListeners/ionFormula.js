@@ -1,6 +1,5 @@
 import domSelectors from "../eventListeners/domSelectors.js";
 import resetFormulaIon from "../resetSection/resetFormulaIon.js";
-import checkIonFormula from "../checkAnswers/checkIonFormula.js";
 import data from "../displays/data.js";
 
 domSelectors.newCationName.addEventListener('click', (e) => {

@@ -16,10 +16,12 @@ export default class MolecularCompound {
     getName() {
         let name = "";
 
+        // Greek prefixes only used on the first element if the subscript is greater than 1
         if (this.firstSubscript > 1) {
             name += molecNumbers(this.firstSubscript);
         }
 
+        // Greak prefix is always used on the second element to indicate the subscript
         name += `${this.firstElement.getElementName()} ${molecNumbers(this.secondSubscript)}${this.secondElement.getIonName()}`;
 
         return name
@@ -28,6 +30,7 @@ export default class MolecularCompound {
     displayName(htmlId = "") {
         let name = "";
 
+        // If an htmlId is given, use it to retrieve the element, otherwise create an empty div
         if (htmlId == "") {
             name = document.createElement('div');
         } else {
@@ -42,12 +45,14 @@ export default class MolecularCompound {
     displayFormula(htmlId = "") {
         let formula = "";
         
+        // If an htmlId is given, use it to retrieve the element, otherwise create an empty div
         if (htmlId == "") {
             formula = document.createElement('div');
         } else {
             formula = document.querySelector(htmlId);
         }
 
+        // Add the symbol and subscripts greater than one for the first element
         formula.append(this.firstElement.getSymbol());
 
         if (this.firstSubscript > 1) {
@@ -56,6 +61,7 @@ export default class MolecularCompound {
             formula.append(subscript);
         }
 
+        // Add the symbol and subscripts greater than one for the second element
         formula.append(this.secondElement.getSymbol());
 
         if (this.secondSubscript > 1) {
@@ -88,11 +94,6 @@ export default class MolecularCompound {
     checkCompoundName() {
         // Generate the name of the compound
         let answer = this.getName();
-        
-        // // If the compound is molecular, generate the name of the compound using those rules
-        // if (domSelectors.includeMolecular.checked == true) {
-        //     answer = data.molecFormulaFromName.getPlainFormula();
-        // } 
 
         // Display the answer to the user
         this.nameDisplayAnswerSelector.innerHTML = "";
@@ -110,21 +111,4 @@ export default class MolecularCompound {
             this.nameDisplayAnswerSelector.style.color = 'red';
         }
     }
-
-
-        // getPlainFormula() {
-    //     let formula = this.firstElement.getSymbol();
-
-    //     if (this.firstSubscript > 1) {
-    //         formula += `/${this.firstSubscript}`;
-    //     }
-
-    //     formula += `${this.secondElement.getSymbol()}`;
-
-    //     if (this.secondSubscript > 1) {
-    //         formula +=`/${this.secondSubscript}`
-    //     }
-
-    //     return formula
-    // }
 }

@@ -1,6 +1,5 @@
 import domSelectors from "./domSelectors.js";
 import resetNameFromFormula from "../resetSection/resetNameFromFormula.js";
-import checkNameFromFormula from "../checkAnswers/checkNameFromFormula.js";
 import data from "../displays/data.js";
 
 

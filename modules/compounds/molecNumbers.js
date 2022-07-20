@@ -1,3 +1,4 @@
+// Used for naming and formulas of molecular compounds. Greek prefixes are used for names.
 const molecNumbers = (number) => {
     if (typeof number == 'string') {
         switch(number) {
