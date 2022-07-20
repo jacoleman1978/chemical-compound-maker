@@ -5,6 +5,7 @@ import randomIon from "./modules/ions/randomIon.js";
 import randomCompound from "./modules/compounds/randomCompound.js";
 
 const main = () => {
+    // Initialize each section
     data.nameTheIon = randomIon('both');
     domSelectors.ionSymbol.append(data.nameTheIon.getFormattedIon());
 

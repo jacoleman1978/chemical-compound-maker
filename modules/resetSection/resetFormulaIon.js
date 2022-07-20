@@ -2,6 +2,7 @@ import domSelectors from "../eventListeners/domSelectors.js";
 import data from "../displays/data.js";
 import randomIon from "../ions/randomIon.js";
 
+// Clear all displayed data and styling in the 'Ion Formula' section
 const resetFormulaIon = (ionType) => {
     domSelectors.ionName.innerHTML = "";
     domSelectors.displayFormulaIonAnswer.innerHTML = "";

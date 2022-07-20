@@ -1,6 +1,7 @@
 import domSelectors from "../eventListeners/domSelectors.js";
 import randomCompound from "../compounds/randomCompound.js";
 
+// Clear all displayed data and styling in the 'Compound from Symbols' section
 const resetNameCompound = () => {
     domSelectors.compoundCationSymbol.innerHTML = "";
     domSelectors.compoundAnionSymbol.innerHTML = "";
