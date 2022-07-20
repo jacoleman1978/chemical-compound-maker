@@ -4,28 +4,36 @@ import tsCationsOptions from "./tmCations.js";
 import polyCationOptions from "./polyCation.js";
 import Ion from "./ion.js";
 
+// Makes the cation list based on which included ion types are checked and which compound types are selected
 const getCationList = (displayType, isDropdownList) => {
     let isIonicChecked = domSelectors.includeIonic.checked;
     let isAcidChecked = domSelectors.includeAcids.checked;
 
     let cationOptions = [];
     
+    // Default: If ionic types radio button is selected, use check box selection to generate cation list
     if (isIonicChecked == true) {
+        // Main group ions checkbox
         if (domSelectors.mgIons.checked == true) {
             cationOptions = [...mgCationsOptions]
         }
     
+        // Transition metal ions checkbox
         if (domSelectors.tsIons.checked == true) {
             cationOptions = [...cationOptions, ...tsCationsOptions]
         }
     
+        // Polyatomic ions checkbox
         if (domSelectors.polyIons.checked == true) {
             cationOptions = [...cationOptions, ...polyCationOptions];
         }
+
+    // If the Acid radio button for compound types is selected, only H^+ cation is included
     } else if (isAcidChecked == true) {
         cationOptions = [new Ion("hydrogen", "H", "+1", false)]
     }
 
+    // If the isDropdownList flag is true, create the cation dropdown list for the 'Compound Playground'
     if (isDropdownList == true) {
         domSelectors.cationDropdown.innerHTML = "";
         let option = document.createElement('option');

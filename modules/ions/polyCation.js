@@ -1,5 +1,6 @@
 import Ion from "./ion.js";
 
+// Cation list of Ion class objects for polyatomic ions
 const polyCations = [
     ['ammonium', 'NH4', '+1', true],
 ];

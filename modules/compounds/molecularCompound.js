@@ -1,6 +1,8 @@
 import molecNumbers from "./molecNumbers.js";
 import domSelectors from "../eventListeners/domSelectors.js";
 
+// Used to make molecular compounds
+// firstElement and secondElement are MolecularCompound class objects
 export default class MolecularCompound {
     constructor(firstElement, firstSubscript, secondElement, secondSubscript) {
         this.firstElement = firstElement;

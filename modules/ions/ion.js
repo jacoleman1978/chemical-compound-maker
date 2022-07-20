@@ -32,9 +32,11 @@ export default class Ion {
         return this.isPolyatomic
     }
 
+    // Creates a new div of the ion
     getFormattedIon() {
         let ionDiv = document.createElement('div');
         
+        // If the isPolyatomic flag is true, add alpha chars to the div, or add integer inside a <sub> element to the div
         if (this.isPolyatomic == true) {
             for (let char of this.symbol) {
                 if (Number.isInteger(parseInt(char)) == false) {
@@ -45,11 +47,13 @@ export default class Ion {
                     ionDiv.append(subscript)
                 }
             }
+        // If it's not polyatomic, just add to the div
         } else {
             ionDiv.append(this.symbol);
 
         }
 
+        // Place the charge in a <sup> element and append
         let chargeDisplay = document.createElement('sup');
         chargeDisplay.textContent = this.charge;
         ionDiv.append(chargeDisplay);

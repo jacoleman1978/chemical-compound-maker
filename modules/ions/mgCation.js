@@ -1,5 +1,6 @@
 import Ion from "./ion.js";
 
+// Cation list of Ion class objects for main group ions
 const mgCations = [
     ['lithium', 'Li', '+1', false],
     ['sodium', 'Na', '+1', false],

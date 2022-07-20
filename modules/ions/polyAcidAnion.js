@@ -1,5 +1,6 @@
 import Ion from "./ion.js";
 
+// Anion list of Ion class objects for polyatomic ions for acids
 const polyAcidAnions = [
     ['acetate', 'CH3COO', '-1', true],
     ['cyanide', 'CN', '-1', true],

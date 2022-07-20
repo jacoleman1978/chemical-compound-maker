@@ -1,5 +1,6 @@
 import Ion from "./ion.js";
 
+// Anion list of Ion class objects for main group ions
 const mgAnions = [
     ['fluoride', 'F', '-1', false],
     ['chloride', 'Cl', '-1', false],

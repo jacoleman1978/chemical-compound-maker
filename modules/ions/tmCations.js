@@ -1,5 +1,6 @@
 import Ion from "./ion.js";
 
+// Cation list of Ion class objects for transition metal ions
 const tsCations = [
     ['copper(I)', 'Cu', '+1', false],
     ['gold(I)', 'Au', '+1', false],

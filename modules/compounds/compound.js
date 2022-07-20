@@ -1,5 +1,7 @@
 import domSelectors from "../eventListeners/domSelectors.js";
 
+// Used for ionic and acidic compounds
+// cation and anion are Ion class objects
 export default class Compound {
     constructor(cation, anion, formulaDisplayAnswerSelector, formulaUserAnswerSelector, nameDisplayAnswerSelector, nameUserAnswerSelector) {
         this.cation = cation;
