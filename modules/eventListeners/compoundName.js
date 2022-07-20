@@ -2,17 +2,16 @@ import data from "../displays/data.js";
 import domSelectors from "./domSelectors.js";
 import resetNameCompound from "../resetSection/resetNameCompound.js";
 
+// Listen for the 'New' button for the 'Compound from Symbols' section
 domSelectors.newCompoundFormulaBtn.addEventListener('click', (e) => {
     e.preventDefault();
     resetNameCompound();
 })
 
+// Listen for the 'Check Answer' button for the 'Compound from Symbols' section
 domSelectors.checkCompoundFromSymbolsBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    //domSelectors.nameCompoundAnswer.innerHTML = "";
 
-    //checkNameFromSymbols();
     data.compoundFromSymbols.checkCompoundName();
-    //checkCompoundFormula(data.compoundFromSymbols.displayFormula(""), domSelectors.displayFormulaCompoundAnswer, domSelectors.formulaCompoundAnswer);
     data.compoundFromSymbols.checkCompoundFormula();
 })

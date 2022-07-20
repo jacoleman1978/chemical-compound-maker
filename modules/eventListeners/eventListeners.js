@@ -1,3 +1,4 @@
+// Run all of the event listeners
 import "./options.js";
 import "./ionName.js";
 import "./ionFormula.js";

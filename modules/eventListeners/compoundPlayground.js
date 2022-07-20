@@ -3,6 +3,7 @@ import data from "../displays/data.js";
 import resetCompoundPlayground from "../resetSection/resetCompoundPlayground.js";
 import makeCompound from "../compounds/makeCompound.js";
 
+// Listen for the cation dropdown list in the 'Compound Playground' section
 domSelectors.cationDropdown.addEventListener("change", (e) => {
     domSelectors.cationDisplay.innerHTML = "";
 
@@ -12,6 +13,7 @@ domSelectors.cationDropdown.addEventListener("change", (e) => {
     domSelectors.cationDisplay.append(formattedIon);
 })
 
+// Listen for the anion dropdown list in the 'Compound Playground' section
 domSelectors.anionDropdown.addEventListener("change", (e) => {
     domSelectors.anionDisplay.innerHTML = "";
 
@@ -21,12 +23,12 @@ domSelectors.anionDropdown.addEventListener("change", (e) => {
     domSelectors.anionDisplay.append(formattedIon);
 });
 
+// Listen for the 'Check Answer' button in the 'Compound Playground' section
 domSelectors.displayPlaygroundFormulaBtn.addEventListener('click', (e) => {
     e.preventDefault();
     domSelectors.displayPlaygroundFormula.innerHTML = "";
 
     makeCompound();
 
-    //checkCompoundFormula(data.playgroundCompound.displayFormula(""), domSelectors.displayPlaygroundFormula, domSelectors.playgroundFormulaAnswer);
     data.playgroundCompound.checkCompoundFormula();
 })

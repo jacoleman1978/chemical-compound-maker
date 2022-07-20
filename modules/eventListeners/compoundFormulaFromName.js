@@ -2,16 +2,17 @@ import data from "../displays/data.js";
 import domSelectors from "./domSelectors.js";
 import resetFormulaFromName from "../resetSection/resetFormulaFromName.js";
 
-
+// Listen for the 'New' button for the 'Formula from Name' section
 domSelectors.newFormulaFromNameBtn.addEventListener('click', (e) => {
     e.preventDefault();
-
     resetFormulaFromName();
 })
 
+// Listen for the 'Check Answer' button for the 'Formula from Name' section
 domSelectors.checkFormulaFromNameBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    //checkCompoundFormula(data.compoundFormulaFromName.displayFormula(""), domSelectors.displayFormulaFromNameAnswer, domSelectors.formulaFromNameAnswer);
+
+    // Check if the section is being used for ionic or molecular compounds
     if (domSelectors.includeMolecular.checked == true) {
         data.molecFormulaFromName.checkCompoundFormula();
     } else {
