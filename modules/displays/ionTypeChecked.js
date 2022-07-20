@@ -13,6 +13,7 @@ const ionTypeChecked = (event) => {
     let isTMIonsChecked = domSelectors.tsIons.checked;
     let isPolyIonsChecked = domSelectors.polyIons.checked;
 
+    // If any of the boxes are checked for 'Ion Types', regenerate the ion lists and reset each of the sections
     if (isMGIonsChecked == true || isTMIonsChecked == true || isPolyIonsChecked == true) {
         data.cationNames = getCationList('name', true);
         data.anionNames = getAnionList('name', true);
@@ -24,6 +25,8 @@ const ionTypeChecked = (event) => {
         resetNameIon('both');
         resetFormulaIon('both');
         resetNameCompound();
+
+    // At least one of the boxes must be checked
     } else {
         event.preventDefault();
         let htmlId = event.target.value;
@@ -36,8 +39,6 @@ const ionTypeChecked = (event) => {
             domSelectors.polyIons.setAttribute('checked', true);
         }
     }
-
-
 }
 
 export default ionTypeChecked;
