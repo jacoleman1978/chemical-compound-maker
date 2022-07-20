@@ -1,3 +1,7 @@
+body {
+    background-color: antiquewhite;
+}
+
 h2 {
     display: flex;
     justify-content: center;
@@ -7,6 +11,12 @@ h2 {
     margin-left: 1rem;
     margin-right: 1rem;
     font-size: large;
+}
+
+hr {
+    margin-top: 0px;
+    margin-bottom: 1rem;
+    border: solid gray 1px;
 }
 
 .flex-display {
@@ -30,12 +40,21 @@ h2 {
     justify-content: space-around;
 }
 
+.flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
 .add-bottom-margin {
     margin-bottom: 0.5rem;
 }
 
 .add-left-margin {
     margin-left: 0.5rem;
+}
+
+.add-gap {
+    gap: 0.5rem;
 }
 
 #options {
@@ -58,7 +77,6 @@ h2 {
     margin-right: 0.5rem;
 }
 
-
 #select-ions {
     display: flex;
     justify-content: space-around;
@@ -74,7 +92,6 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
 }
 
 .ion-display {
@@ -104,6 +121,8 @@ button {
 .practice-forms {
     border: solid black 1px;
     padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
 }
@@ -112,7 +131,7 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -121,12 +140,30 @@ button {
     margin-top: 0.5rem;
 }
 
-.input-width {
-    width: 10rem;
-}
-
-.editable {
+.user-input {
     height: 1.5rem;
     width: 10rem;
     border: solid black 0.5px;
+    padding: 0px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.div-width {
+    width: 14rem;
+}
+
+.problem-background {
+    background-color: lightsteelblue;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: solid 1px darkblue;
+}
+
+.new-buttons {
+    background-color: #C9E4AC;
+}
+
+.check-buttons {
+    background-color: #E4BCAC;
 }

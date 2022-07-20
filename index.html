@@ -9,181 +9,199 @@
     <title>Compound Maker</title>
 </head>
 <body>
-    <div class="practice-forms">
-        <h2 class="add-bottom-margin">Options</h2>
-        <form id="options">
-            <div class="outline">
-                Included Compound Types:
-                <div class="options">
-                    <input class="compound-types" type="radio" id="ionic" name="type" value="ionic" checked/>
-                    <label for="ionic">Ionic</label>
+    <section class="flex-center">
+        <div class="practice-forms">
+            <h2 class="add-bottom-margin">Options</h2>
+            <form id="options">
+                <div class="outline">
+                    Included Compound Types:
+                    <div class="options">
+                        <input class="compound-types" type="radio" id="ionic" name="type" value="ionic" checked/>
+                        <label for="ionic">Ionic</label>
+                    </div>
+                    <div class="options">
+                        <input class="compound-types" type="radio" id="acids" name="type" value="acids"/>
+                        <label for="acids">Acids</label>
+                    </div>
+                    <div class="options">
+                        <input class="compound-types" type="radio" id="molecular" name="type" value="molecular"/>
+                        <label for="molecular">Molecular</label>
+                    </div>
                 </div>
-                <div class="options">
-                    <input class="compound-types" type="radio" id="acids" name="type" value="acids"/>
-                    <label for="acids">Acids</label>
+                <div id="ion-types" class="outline ionic-only">
+                    Included Ion Types:
+                    <div class="options">
+                        <input class="ion-types" type="checkbox" id="main-group-ions" name="main-group-ions" value="main-group-ions" checked/>
+                        <label for="main-group-ions">Main Group Ions</label>
+                    </div>
+                    <div id="transition-metals-option" class="options">
+                        <input class="ion-types" type="checkbox" id="transition-metal-ions" name="transition-metal-ions" value="transition-metal-ions"/>
+                        <label for="transition-metal-ions">Transition Metal Ions</label>
+                    </div>
+                    <div class="options">
+                        <input class="ion-types" type="checkbox" id="polyatomic-ions" name="polyatomic-ions" value="polyatomic-ions"/>
+                        <label for="polyatomic-ions">Polyatomic Ions</label>
+                    </div>
                 </div>
-                <div class="options">
-                    <input class="compound-types" type="radio" id="molecular" name="type" value="molecular"/>
-                    <label for="molecular">Molecular</label>
-                </div>
-            </div>
-            <div id="ion-types" class="outline ionic-only">
-                Included Ion Types:
-                <div class="options">
-                    <input class="ion-types" type="checkbox" id="main-group-ions" name="main-group-ions" value="main-group-ions" checked/>
-                    <label for="main-group-ions">Main Group Ions</label>
-                </div>
-                <div id="transition-metals-option" class="options">
-                    <input class="ion-types" type="checkbox" id="transition-metal-ions" name="transition-metal-ions" value="transition-metal-ions"/>
-                    <label for="transition-metal-ions">Transition Metal Ions</label>
-                </div>
-                <div class="options">
-                    <input class="ion-types" type="checkbox" id="polyatomic-ions" name="polyatomic-ions" value="polyatomic-ions"/>
-                    <label for="polyatomic-ions">Polyatomic Ions</label>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="flex-center">
+            </form>
+        </div>
+    </section>
+
+    <hr>
+    
+    <section class="ion-options">
         <form id="name-ion-section" class="practice-forms ionic-only">
             <div class="ion-options">
                 <h2>Name of the Ion</h2>
                 <div class="button-group">
-                    <button id="new-cation-symbol">New Cation</button>
-                    <button id="new-anion-symbol">New Anion</button>
-                    <button id="new-random-ion-symbol">New Random Ion</button>
+                    <button id="new-cation-symbol" class="new-buttons">New Cation</button>
+                    <button id="new-anion-symbol" class="new-buttons">New Anion</button>
+                    <button id="new-random-ion-symbol" class="new-buttons">New Random Ion</button>
                 </div>
             </div>
-            <div class="ion-display">
-                <div id="ion-symbol"></div>
-                <div>
-                    <input type="text" id="name-ion-answer" placeholder="Name of the Ion" autocomplete="off"/>
+            <div class="ion-display flex-center">
+                <div id="ion-symbol" class="problem-background"></div>
+                <div class="flex-align-center">
+                    <label for="name-ion-answer">Name:</label>
+                    <input type="text" id="name-ion-answer" autocomplete="off" class="user-input add-left-margin"/>
                     <div id="display-name-ion-answer"></div>
                 </div>
-                <div class="flex-start">
-                    <button id="check-ion-name">Check Answer</button>
+                <div class="flex-align-center">
+                    <button id="check-ion-name" class="check-buttons">Check Answer</button>
                 </div>
             </div>
         </form>
-        <form id="formula-ion-section" class="practice-forms ionic-only">
+        <form id="formula-ion-section" class="practice-forms ionic-only options">
             <div class="ion-options">
                 <h2>Formula of the Ion</h2>
                 <div class="button-group">
-                    <button id="new-cation-name">New Cation</button>
-                    <button id="new-anion-name">New Anion</button>
-                    <button id="new-random-ion-name">New Random Ion</button>
+                    <button id="new-cation-name" class="new-buttons">New Cation</button>
+                    <button id="new-anion-name" class="new-buttons">New Anion</button>
+                    <button id="new-random-ion-name" class="new-buttons">New Random Ion</button>
                 </div>
             </div>
             <div class="ion-display">
-                <div id="ion-name"></div>
-                <div class="flex-display">
+                <div id="ion-name" class="problem-background"></div>
+                <div class="flex-align-center">
                     <label for="formula-ion-answer">Formula:</label>
                     <div class="add-left-margin">
-                        <div contenteditable="true" id="formula-ion-answer" class="editable"></div>
+                        <div contenteditable="true" id="formula-ion-answer" class="user-input"></div>
                         <div id="display-formula-ion-answer"></div>
                     </div>
                 </div>
-                <div class="flex-start">
-                    <button id="check-ion-formula">Check Answer</button>
+                <div class="flex-align-center">
+                    <button id="check-ion-formula" class="check-buttons">Check Answer</button>
                 </div>
             </div>
         </form>
-    </div>
- 
-    <form id="compound-from-symbols-display" class="practice-forms">
-        <div class="ion-options">
-            <h2>Compound from Symbols</h2>
-            <div class="button-group">
-                <button id="new-compound-formula-btn">New Compound</button>
-            </div>
-        </div>
-        <div class="ion-display">
-            <div id="compound-cation-symbol"></div>
-            <div id="compound-anion-symbol"></div>
-            <div>
-                <input type="text" id="name-compound-answer" placeholder="Name of the Compound" autocomplete="off" class="input-width"/>
-                <div id="display-name-compound-answer"></div>
-            </div>
-            <div class="flex-display">
-                <label for="formula-compound-answer">Formula:</label>
-                <div class="add-left-margin">
-                    <div contenteditable="true" id="formula-compound-answer" class="editable"></div>
-                    <div id="display-formula-compound-answer"></div>
+    </section>
+
+    <section class="flex-center">
+        <form id="compound-from-symbols-display" class="practice-forms">
+            <div class="ion-options">
+                <h2>Compound from Symbols</h2>
+                <div class="button-group">
+                    <button id="new-compound-formula-btn" class="new-buttons">New Compound</button>
                 </div>
             </div>
-            <div class="flex-start">
-                <button id="check-compound-from-symbols-btn">Check Answer</button>
+            <div class="ion-display">
+                <div class="problem-background flex-center">
+                    <div id="compound-cation-symbol"></div>
+                    <div id="compound-anion-symbol"></div>
+                </div>
+                <div class="ion-options flex-align-center add-gap">
+                    <div class="flex-align-center div-width">
+                        <label for="name-compound-answer">Name:</label>
+                        <input type="text" id="name-compound-answer" autocomplete="off" class="user-input add-left-margin"/>
+                        <div id="display-name-compound-answer"></div>
+                    </div>
+                    <div class="flex-align-center div-width">
+                        <label for="formula-compound-answer">Formula:</label>
+                        <div class="add-left-margin">
+                            <div contenteditable="true" id="formula-compound-answer" class="user-input"></div>
+                            <div id="display-formula-compound-answer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-align-center">
+                    <button id="check-compound-from-symbols-btn" class="check-buttons">Check Answer</button>
+                </div>
             </div>
-        </div>
-    </form>
-    <div class="flex-center">
+        </form>
+    </section>
+    
+    <section class="ion-options">
         <form class="practice-forms">
             <div class="ion-options">
                 <h2>Name from Formula</h2>
                 <div class="button-group">
-                    <button id="new-name-from-formula-btn">New Compound</button>
+                    <button id="new-name-from-formula-btn" class="new-buttons">New Compound</button>
                 </div>
             </div>
             <div class="ion-display">
-                <div id="name-from-formula"></div>
-                <div>
-                    <input type="text" id="name-from-formula-answer" placeholder="Name of the Compound" autocomplete="off" class="input-width"/>
+                <div id="name-from-formula" class="problem-background"></div>
+                <div class="flex-align-center">
+                    <label for="name-from-formula-answer">Name:</label>
+                    <input type="text" id="name-from-formula-answer" autocomplete="off" class="user-input add-left-margin"/>
                     <div id="display-name-from-formula-answer"></div>
                 </div>
-                <div class="flex-start">
-                    <button id="check-name-from-formula-btn">Check Answer</button>
+                <div class="flex-align-center">
+                    <button id="check-name-from-formula-btn" class="check-buttons">Check Answer</button>
                 </div>
             </div>
         </form>
-        <form class="practice-forms">
+        <form class="practice-forms options">
             <div class="ion-options">
                 <h2>Formula from Name</h2>
                 <div class="button-group">
-                    <button id="new-formula-from-name-btn">New Compound</button>
+                    <button id="new-formula-from-name-btn" class="new-buttons">New Compound</button>
                 </div>
             </div>
             <div class="ion-display">
-                <div id="formula-from-name"></div>
-                <div class="flex-display">
+                <div id="formula-from-name" class="problem-background"></div>
+                <div class="flex-align-center">
                     <label for="formula-from-name-answer">Formula:</label>
                     <div class="add-left-margin">
-                        <div contenteditable="true" id="formula-from-name-answer" class="editable"></div>
+                        <div contenteditable="true" id="formula-from-name-answer" class="user-input"></div>
                         <div id="display-formula-from-name-answer"></div>
                     </div>
                 </div>
-                <div class="flex-start">
-                    <button id="check-formula-from-name-btn">Check Answer</button>
+                <div class="flex-align-center">
+                    <button id="check-formula-from-name-btn" class="check-buttons">Check Answer</button>
                 </div>
             </div>
         </form>
-    </div>
-    <form id="compound-formula-playground" class="practice-forms ionic-only">
-        <h2>Compound Formula Playground</h2>
-        <div class="flex-around-start">
-            <div id="select-ions">
-                <div>
-                    <select name="cation-dropdown" id="cation-dropdown" class="flex-display"></select>
-                    <div id="cation-display" class="flex-center"></div>
+    </section>
+
+    <section class="flex-center">
+        <form id="compound-formula-playground" class="practice-forms ionic-only">
+            <h2>Compound Formula Playground</h2>
+            <div class="flex-around-start">
+                <div id="select-ions" class="problem-background">
+                    <div>
+                        <select name="cation-dropdown" id="cation-dropdown" class="flex-display new-buttons"></select>
+                        <div id="cation-display" class="flex-center"></div>
+                    </div>
+                    <div >
+                        <select name="anion-dropdown" id="anion-dropdown" class="flex-display new-buttons"></select>
+                        <div id="anion-display" class="flex-center"></div>
+                    </div>
                 </div>
-                <div >
-                    <select name="anion-dropdown" id="anion-dropdown" class="flex-display"></select>
-                    <div id="anion-display" class="flex-center"></div>
+                <div class="flex-align-center">
+                    <label for="playground-formula-answer">Formula:</label>
+                    <div class="add-left-margin">
+                        <div contenteditable="true" id="playground-formula-answer" class="user-input"></div>
+                        <div id="display-playground-formula"></div>
+                    </div>
+                </div>
+                <div class="flex-align">
+                    <button id="display-playground-formula-btn" class="check-buttons">Check Answer</button>
                 </div>
             </div>
-            <div class="flex-display">
-                <label for="playground-formula-answer">Formula:</label>
-                <div class="add-left-margin">
-                    <div contenteditable="true" id="playground-formula-answer" class="editable"></div>
-                    <div id="display-playground-formula"></div>
-                </div>
+            <div class="flex-around">
+                <div id="display-formula"></div>
             </div>
-            <div class="flex-start">
-                <button id="display-playground-formula-btn">Check Answer</button>
-            </div>
-        </div>
-        <div class="flex-around">
-            <div id="display-formula"></div>
-        </div>
-    </form>
+        </form>
+    </section>
 </body>
 </html>
