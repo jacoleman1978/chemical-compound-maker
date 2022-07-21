@@ -239,7 +239,7 @@ export default class Compound {
         let userAnswer = this.formulaUserAnswerSelector.innerHTML;
 
         //Check the user's answer and change styles based on correctness
-        if (userAnswer == this.displayFormula("").innerHTML) {
+        if (userAnswer == this.displayFormula("").innerHTML || userAnswer == this.getPlainFormula()) {
             this.formulaUserAnswerSelector.style.backgroundColor = 'lightgreen';
             this.formulaDisplayAnswerSelector.style.color = 'green';
         } else {
@@ -266,7 +266,7 @@ export default class Compound {
         console.log(userAnswer)
 
         // Check the user's answer and change styles based on correctness
-        if (userAnswer === answer || userAnswer === this.getPlainFormula()) {
+        if (userAnswer === this.getPlainFormula()) {
             this.nameUserAnswerSelector.style.backgroundColor = 'lightgreen';
             this.nameDisplayAnswerSelector.style.color = 'green';
         } else {
