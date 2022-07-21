@@ -90,6 +90,9 @@ export default class Ion {
         // Remove whitespace
         let userAnswer = this.nameUserAnswerSelector.value.trim();
 
+        // Convert first letters that are uppercase to lowercase
+        userAnswer = userAnswer.slice(0,1).toLowerCase() + userAnswer.slice(1)
+
         // Check the user's answer and change styles based on correctness
         if (userAnswer === answer) {
             this.nameUserAnswerSelector.style.backgroundColor = 'lightgreen';

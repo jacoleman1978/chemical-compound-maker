@@ -202,6 +202,8 @@ export default class Compound {
 
         // Remove whitespace
         let userAnswer = this.nameUserAnswerSelector.value.trim();
+
+        // Convert first letters that are uppercase to lowercase
         let spacePos = userAnswer.search(" ");
 
         userAnswer = userAnswer.slice(0,1).toLowerCase() + userAnswer.slice(1, spacePos + 1) + userAnswer.slice(spacePos + 1, spacePos + 2).toLowerCase() + userAnswer.slice(spacePos + 2);
