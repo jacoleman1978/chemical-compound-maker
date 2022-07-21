@@ -263,10 +263,9 @@ export default class Compound {
         let spacePos = userAnswer.search(" ");
 
         userAnswer = userAnswer.slice(0,1).toLowerCase() + userAnswer.slice(1, spacePos + 1) + userAnswer.slice(spacePos + 1, spacePos + 2).toLowerCase() + userAnswer.slice(spacePos + 2);
-        console.log(userAnswer)
 
         // Check the user's answer and change styles based on correctness
-        if (userAnswer === this.getPlainFormula()) {
+        if (userAnswer === this.getName()) {
             this.nameUserAnswerSelector.style.backgroundColor = 'lightgreen';
             this.nameDisplayAnswerSelector.style.color = 'green';
         } else {
