@@ -202,6 +202,10 @@ export default class Compound {
 
         // Remove whitespace
         let userAnswer = this.nameUserAnswerSelector.value.trim();
+        let spacePos = userAnswer.search(" ");
+
+        userAnswer = userAnswer.slice(0,1).toLowerCase() + userAnswer.slice(1, spacePos + 1) + userAnswer.slice(spacePos + 1, spacePos + 2).toLowerCase() + userAnswer.slice(spacePos + 2);
+        console.log(userAnswer)
 
         // Check the user's answer and change styles based on correctness
         if (userAnswer === answer) {
