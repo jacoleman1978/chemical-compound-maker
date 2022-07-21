@@ -82,14 +82,14 @@ export default class MolecularCompound {
         formula += this.firstElement.getSymbol();
 
         if (this.firstSubscript > 1) {
-            formula += `/${subscript}`;
+            formula += `/${this.firstSubscript}`;
         }
 
         // Add the symbol and subscripts greater than one for the second element
         formula += this.secondElement.getSymbol();
 
         if (this.secondSubscript > 1) {
-            formula += `/${subscript}`;
+            formula += `/${this.secondSubscript}`;
         }
 
         return formula

@@ -200,7 +200,7 @@ export default class Compound {
         
         // Append a subscript for numbers greater than 1
         if (this.cationSubscript > 1) {
-            formula += `/${cationSubElement}`;
+            formula += `/${this.cationSubscript}`;
         }
 
         // If the anion is polyatomic with a subscript greater than one, put the anion in parentheses
@@ -213,7 +213,7 @@ export default class Compound {
             if (Number.isInteger(parseInt(char)) == false) {
                 formula += char ;
             } else {
-                formula += `/${subscript}`;
+                formula += `/${this.anionSubscript}`;
             }
         }
 
@@ -224,7 +224,7 @@ export default class Compound {
 
         // Append a subscript for numbers greater than 1
         if (this.anionSubscript > 1) {
-            formula += `/${anionSubElement}`;
+            formula += `/${this.anionSubscript}`;
         }
 
         return formula

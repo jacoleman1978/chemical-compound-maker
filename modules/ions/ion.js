@@ -61,7 +61,7 @@ export default class Ion {
     }
 
     getPlainIon() {
-        formula = ""
+        let formula = ""
 
         // If the isPolyatomic flag is true, add alpha chars to the div, or add integer inside a <sub> element to the div
         if (this.isPolyatomic == true) {
@@ -78,7 +78,7 @@ export default class Ion {
         }
 
         // Place the charge in a <sup> element and append
-        formula += `^${chargeDisplay}`;
+        formula += `^${this.charge}`;
 
         return formula 
     }
@@ -92,7 +92,7 @@ export default class Ion {
         let userAnswer = this.formulaUserAnswerSelector.innerHTML;
 
         //Check the user's answer and change styles based on correctness
-        if (userAnswer == this.getFormattedIon().innerHTML) {
+        if (userAnswer == this.getFormattedIon().innerHTML || userAnswer == this.getPlainIon()) {
             this.formulaUserAnswerSelector.style.backgroundColor = 'lightgreen';
             this.formulaDisplayAnswerSelector.style.color = 'green';
         } else {
