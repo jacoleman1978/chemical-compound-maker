@@ -174,6 +174,62 @@ export default class Compound {
         name.append(this.getName());
     }
 
+    getPlainFormula() {
+        // Run the find subscripts algorithm first
+        this.findSubscripts();
+        let formula = ""
+
+        // If the cation is polyatomic with a subscript greater than one, put the cation in parentheses
+        if (this.cationSubscript > 1 && this.catIsPoly) {
+            formula += '(';
+        }
+
+        // Go through each character of the cation...only applies to polyatomic cations, appending alpha characters or creating sub elements with numbers and appending
+        for (let char of this.catSymbol) {
+            if (Number.isInteger(parseInt(char)) == false) {
+                formula += char;
+            } else {
+                formula += `/${subscript}`;
+            }
+        }
+
+        // Close parenthesis around cation if needed
+        if (this.cationSubscript > 1 && this.catIsPoly) {
+            formula += ')';
+        }
+        
+        // Append a subscript for numbers greater than 1
+        if (this.cationSubscript > 1) {
+            formula += `/${cationSubElement}`;
+        }
+
+        // If the anion is polyatomic with a subscript greater than one, put the anion in parentheses
+        if (this.anionSubscript > 1 && this.anIsPoly == true) {
+            formula += '(';
+        }
+
+        // Go through each character of the anion...only applies to polyatomic anions, appending alpha characters or creating sub elements with numbers and appending
+        for (let char of this.anSymbol) {
+            if (Number.isInteger(parseInt(char)) == false) {
+                formula += char ;
+            } else {
+                formula += `/${subscript}`;
+            }
+        }
+
+        // Close parenthesis around anion if needed
+        if (this.anionSubscript > 1 && this.anIsPoly == true) {
+            formula += ')';
+        }
+
+        // Append a subscript for numbers greater than 1
+        if (this.anionSubscript > 1) {
+            formula += `/${anionSubElement}`;
+        }
+
+        return formula
+    }
+
     checkCompoundFormula() {
         // Display the answer to the user
         this.formulaDisplayAnswerSelector.innerHTML = "";
@@ -210,7 +266,7 @@ export default class Compound {
         console.log(userAnswer)
 
         // Check the user's answer and change styles based on correctness
-        if (userAnswer === answer) {
+        if (userAnswer === answer || userAnswer === this.getPlainFormula()) {
             this.nameUserAnswerSelector.style.backgroundColor = 'lightgreen';
             this.nameDisplayAnswerSelector.style.color = 'green';
         } else {

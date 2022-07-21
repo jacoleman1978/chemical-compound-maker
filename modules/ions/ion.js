@@ -50,7 +50,6 @@ export default class Ion {
         // If it's not polyatomic, just add to the div
         } else {
             ionDiv.append(this.symbol);
-
         }
 
         // Place the charge in a <sup> element and append
@@ -59,6 +58,29 @@ export default class Ion {
         ionDiv.append(chargeDisplay);
 
         return ionDiv    
+    }
+
+    getPlainIon() {
+        formula = ""
+
+        // If the isPolyatomic flag is true, add alpha chars to the div, or add integer inside a <sub> element to the div
+        if (this.isPolyatomic == true) {
+            for (let char of this.symbol) {
+                if (Number.isInteger(parseInt(char)) == false) {
+                    formula += char;
+                } else {
+                    formula += `/${subscript}`;
+                }
+            }
+        // If it's not polyatomic, just add to the div
+        } else {
+            formula += this.symbol;
+        }
+
+        // Place the charge in a <sup> element and append
+        formula += `^${chargeDisplay}`;
+
+        return formula 
     }
 
     checkIonFormula() {

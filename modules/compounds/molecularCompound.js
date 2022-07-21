@@ -75,6 +75,26 @@ export default class MolecularCompound {
         return formula
     }
 
+    getPlainFormula() {
+        let formula = "";
+
+        // Add the symbol and subscripts greater than one for the first element
+        formula += this.firstElement.getSymbol();
+
+        if (this.firstSubscript > 1) {
+            formula += `/${subscript}`;
+        }
+
+        // Add the symbol and subscripts greater than one for the second element
+        formula += this.secondElement.getSymbol();
+
+        if (this.secondSubscript > 1) {
+            formula += `/${subscript}`;
+        }
+
+        return formula
+    }
+
     checkCompoundFormula() {
         // Display the answer to the user
         this.formulaDisplayAnswerSelector.innerHTML = "";
@@ -84,7 +104,7 @@ export default class MolecularCompound {
         let userAnswer = this.formulaUserAnswerSelector.innerHTML;
 
         //Check the user's answer and change styles based on correctness
-        if (userAnswer == this.displayFormula("").innerHTML) {
+        if (userAnswer == this.displayFormula("").innerHTML || userAnswer == this.getPlainFormula()) {
             this.formulaUserAnswerSelector.style.backgroundColor = 'lightgreen';
             this.formulaDisplayAnswerSelector.style.color = 'green';
         } else {
