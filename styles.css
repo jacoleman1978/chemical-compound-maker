@@ -45,6 +45,11 @@ hr {
     align-items: center;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .add-bottom-margin {
     margin-bottom: 0.5rem;
 }
