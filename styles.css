@@ -121,6 +121,8 @@ hr {
 
 button {
     border-radius: 10px;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
 }
 
 .practice-forms {
